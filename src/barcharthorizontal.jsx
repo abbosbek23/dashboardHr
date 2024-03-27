@@ -53,13 +53,14 @@ const BarchartHorizontal = () => {
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: ["#BAEDBD", "#95A4FC", "#FFE999", "#B1E3FF", "#C6C7F8"],
         barThickness: 15,
+        width:'100%'
       },
     ],
   };
 
   return (
-    <div style={{ height: "180px", width: "370px", marginTop:"10px", marginLeft: "0px", marginRight: "0px" }}>
-      <Bar style={{ marginLeft: "0px", marginRight: "0px" }} data={data} options={options} />
+    <div style={{ height: "200px", width: "100%", marginTop:"10px", marginLeft: "10px", marginRight: "0px" }}>
+      <Bar style={{ marginLeft: "0px", marginRight: "0px" }} height={220} width={400} data={data} options={options} />
     </div>
   );
 };

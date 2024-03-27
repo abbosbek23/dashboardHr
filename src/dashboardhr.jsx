@@ -205,7 +205,7 @@ function DashboardHr() {
               </Box>
               </Box>
               <Box sx={{display:"flex"}}>
-              <Box sx={{width:"370px",height:"260px",padding:" 8px 14px 37px 0px",borderRadius: "20px",backgroundColor:"#F7F9FB",marginRight:"10px",marginLeft:"40px"}}>
+              <Box sx={{width:"47%",height:"260px",padding:" 8px 14px 37px 0px",borderRadius: "20px",backgroundColor:"#F7F9FB",marginRight:"10px",marginLeft:"40px",alignItems:"center"}}>
                 <Typography sx={{color:"#1C1F21",
 fontfamily: "Poppins,sans-serif",
 fontSize: "18px",
@@ -213,9 +213,9 @@ fontStyle: "normal",
 fontWeight: 700,
 lineHeight: "24px",
 letterSpacing: "-0.48px",textAlign:"center"}}>Education level distribution</Typography>
-                <BarchartHorizontal/>
+                <BarchartHorizontal/> 
               </Box>
-              <Box className={"barvertical"} sx={{width:"350px",height:"260px",padding:" 10px 0px 37px 10px",borderRadius: "20px",backgroundColor:"#F7F9FB"}}>
+              <Box className={"barvertical"} sx={{width:"45%",height:"260px",padding:" 10px 0px 37px 10px",borderRadius: "20px",backgroundColor:"#F7F9FB",alignItems:"center"}}>
                 <Typography sx={{color:"#1C1F21",
 fontfamily: "Poppins,sans-serif",
 fontSize: "16px",

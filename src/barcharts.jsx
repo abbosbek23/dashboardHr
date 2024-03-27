@@ -61,9 +61,9 @@ const LanguageChart = () => {
   };
 
   return (
-    <div style={{ height: '230px', width: "280px", marginLeft: "0px", marginRight: "0px" }}>
+    <div style={{ height: '230px', width: "100%", marginLeft: "0px", marginRight: "0px" }}>
       {/* Adjust the height here */}
-      <Bar data={chartConfig} width={330} options={options} />
+      <Bar data={chartConfig} width={350} options={options} />
     </div>
   );
 };
