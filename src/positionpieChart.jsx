@@ -139,7 +139,6 @@ const DoughnutChart = () => {
 
   const myChart = new Chart(chartRef.current, config);
 
-  // Cleanup function
   return () => {
     myChart.destroy();
   };
