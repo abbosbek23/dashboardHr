@@ -38,9 +38,7 @@ function LavozimlarTable() {
       <TableHead>
         <TableRow sx={{width:"100%"}}>
           <TableCell sx={{width:"25%",padding:"10px"}}>Олдинги лавозими</TableCell>
-          <TableCell sx={{width:"25%",padding:"10px"}}>
-          Status
-          </TableCell>
+          <TableCell sx={{width:"25%",padding:"10px"}}>Status</TableCell>
           <TableCell sx={{width:"20%",padding:"10px"}}>Янги лавозимга ўтган санаси</TableCell>
           <TableCell sx={{width:"25%",padding:"10px"}}>Хозирги лавозими</TableCell>
         </TableRow>
