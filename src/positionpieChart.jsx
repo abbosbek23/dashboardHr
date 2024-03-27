@@ -126,7 +126,7 @@ const DoughnutChart = () => {
         '#FF6384',
         '#36A2EB',
         '#FFCE56',
-        // Add more colors as needed
+        
       ],
     }],
   };
