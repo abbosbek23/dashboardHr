@@ -113,7 +113,7 @@ const DoughnutChart = () => {
   // Create labels and counts for the chart data
   const labels = top20.map(([position, _]) => position);
   const counts = top20.map(([_, count]) => count);
-  if (otherCount > 0) {
+  if (otherCount > 0){
     labels.push('Others');
     counts.push(otherCount);
   }
