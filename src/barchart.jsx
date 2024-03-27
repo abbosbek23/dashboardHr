@@ -12,7 +12,6 @@ const EmployeeAgeDistribution = ({ agegroups }) => {
     labels: ['30', '30-40', '40-50', '50-60', '60 +'],
     datasets: [
       {
-        label: 'Employee age dynamics',
         data: chartDatas.map(data => data.value),
         backgroundColor: ["#95A4FC", "#BAEDBD", "#1C1F21", "#B1E3FF", "#FFE999"],
         borderColor: 'rgba(75, 192, 192, 1)',
@@ -40,16 +39,19 @@ const EmployeeAgeDistribution = ({ agegroups }) => {
     plugins: {
       legend: {
         position: 'top',
+        display:false
       },
       title: {
         display: true,
         text: 'Employee Age Distribution',
+        color:"#000",
+        fontSize:"21px"
       },
     },
   };
 
   return (
-    <div style={{ height: "278px", width: "283px" }}>
+    <div style={{ height: "330px", width: "283px" }}>
       <Bar height={0} data={chartData} options={options} />
     </div>
   );

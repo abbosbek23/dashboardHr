@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip } from 'chart.js';
 import { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip);
 
 const BarchartHorizontal = () => {
   const [educations, setEducations] = useState({});
@@ -21,8 +21,6 @@ const BarchartHorizontal = () => {
     getLanguageInfo();
   }, []);
 
-//   console.log(educations);
-
   const options = {
     indexAxis: 'y',
     elements: {
@@ -32,13 +30,13 @@ const BarchartHorizontal = () => {
       },
     },
     responsive: true,
-    legend: {
-      labels: {
-        fontSize: 23 // Labelning font o'lchami 23px
-      }
+    plugins: {
+      legend: {
+        display: false,
+      },
     },
     title: {
-      display: true,
+      display: false,
       text: 'Education level distribution',
       fontSize: 30 // Title ning font o'lchami 30px
     },
@@ -46,7 +44,6 @@ const BarchartHorizontal = () => {
 
   const labels = ["Bachelor", "Master", "Incomplete Higher", "High", "Medium Special"];
   const chartDatas = educations ? Object.entries(educations).map(([ageRange, value]) => ({ name: ageRange, value: value })) : [];
-//   console.log(chartDatas.map(data => data.value));
   const data = {
     labels,
     datasets: [
@@ -61,7 +58,7 @@ const BarchartHorizontal = () => {
   };
 
   return (
-    <div style={{ height: "178px", width: "402px", marginLeft: "0px", marginRight: "0px" }}>
+    <div style={{ height: "180px", width: "370px", marginTop:"10px", marginLeft: "0px", marginRight: "0px" }}>
       <Bar style={{ marginLeft: "0px", marginRight: "0px" }} data={data} options={options} />
     </div>
   );

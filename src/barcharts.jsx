@@ -34,6 +34,7 @@ const LanguageChart = () => {
       backgroundColor: 'rgba(54, 162, 235, 0.5)', // Blue color for bars
       borderColor: 'rgba(54, 162, 235, 1)', // Blue color for border
       borderWidth: 1,
+      barThickness: 7,
     })),
   };
 
@@ -51,17 +52,16 @@ const LanguageChart = () => {
       },
       title: {
         display: true,
-        text: 'Employee Age Distribution',
       },
     },
     maintainAspectRatio: false,
     responsive: true,
-    height: 100,
+    height: 80,
     width: 300,
   };
 
   return (
-    <div style={{ height: '250px', width: "280px", marginLeft: "0px", marginRight: "0px" }}>
+    <div style={{ height: '230px', width: "280px", marginLeft: "0px", marginRight: "0px" }}>
       {/* Adjust the height here */}
       <Bar data={chartConfig} width={330} options={options} />
     </div>

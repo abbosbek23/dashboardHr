@@ -70,9 +70,10 @@ const BarChartComponent = () => {
     fetchData(); // Ma'lumotlarni olib kelish
   }, []); // use
 
-
+  console.log(data);  
+  
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" height={380}>
       <BarChart data={data} layout="vertical" margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
         <XAxis type="number" />
         <YAxis type="category" dataKey="group" />
