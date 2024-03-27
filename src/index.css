@@ -1,0 +1,67 @@
+*{
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root{
+  max-width: 1444px;
+}
+.login{
+  background-color: #F5EFE1;
+  width: 100%;
+ 
+}
+.login::-webkit-scrollbar {
+display: none;
+}
+
+.box-signin{
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.808);
+}
+.login-form{
+  backdrop-filter: blur(5px);
+  background: none;
+  width: 100%;
+  padding: 16px 22px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: none;  
+}
+.barvertical::-webkit-scrollbar{
+  display: none;
+}
+
+
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bar {
+  margin-bottom: 10px;
+}
+
+.label {
+  margin-bottom: 5px;
+}
+
+.bar-container {
+  display: flex;
+  align-items: center;
+}
+
+.percentage-bar {
+  height: 20px;
+  background-color: #2196f3; /* Mavrikkam */
+}
+
+.count-bar {
+  height: 20px;
+  background-color: #4caf50; /* Yashil */
+}
+
+.value {
+  margin-top: 5px;
+}

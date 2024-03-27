@@ -1,0 +1,16 @@
+<svg width="5" height="6" viewBox="0 0 5 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="5" height="6" fill="#1E1E1E"/>
+<g id="HR Dashboard">
+<rect x="-246" y="-564" width="1440" height="1024" rx="20" fill="white"/>
+<g id="Team Members">
+<rect id="Rectangle 4181" x="-216" y="-97" width="1034" height="304" rx="20" fill="#F7F9FB"/>
+<g id="Status">
+<g id="Frame">
+<rect x="-8" y="-9" width="66" height="24" rx="6" fill="white"/>
+<rect x="-7.5" y="-8.5" width="65" height="23" rx="5.5" stroke="#1C1F21" stroke-opacity="0.2"/>
+<circle id="Ellipse 83" cx="2.5" cy="3" r="2.5" fill="#7AE582"/>
+</g>
+</g>
+</g>
+</g>
+</svg>
