@@ -134,7 +134,6 @@ const DoughnutChart = () => {
     type: 'doughnut',
     data: chartData,
     options: {
-      // Add chart options here if needed
     },
   };
 
