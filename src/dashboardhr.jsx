@@ -15,6 +15,7 @@ import DoughnutChart from "./positionpieChart";
 import BarChart from "./demobarchart";
 import BarChartComponent from "./boshliqlarbarchart";
 import LavozimlarTable from "./teammemberstable";
+import GenderPieChart from "./genderpiechart";
 
 function DashboardHr() {
 
@@ -24,7 +25,7 @@ function DashboardHr() {
   useEffect(()=>{
    const getStaffnumber = async() => {
     try {
-        const {data} = await axios.get("http://64.227.121.87/api/v1/age-dynamics")
+        const {data} = await axios.get("https://dev.ikramovna.me/api/v1/age-dynamics")
         // console.log(data);
         setStaffNumber(data)
     } catch (error) {
@@ -48,13 +49,12 @@ function DashboardHr() {
         sx={{ width: "100%"}}>
             <Grid
               xs={12}
-              sm={8}
-              item
+              sm={7}
               sx={{
                 marginLeft:"10px",
               }}
             >
-                <Box sx={{padding:"30px",display:"flex"}}>
+                <Box sx={{padding:"30px 10px",display:"flex",marginLeft:"25px"}}>
               <Box sx={{width:"25%", borderRadius: "20px", background: "#E3F5FF",marginRight:"10px",marginLeft:"0px"}}>
                 <Box sx={{ display: "flex" }}>
                   <img
@@ -64,7 +64,7 @@ function DashboardHr() {
                     style={{margin:"20px 10px"}}
                     alt="icons"
                   />
-                  <Box sx={{marginRight:"20px"}}>
+                  <Box sx={{marginRight:"35px"}}>
                     <Typography
                       sx={{
                         color: "#1C1F21",
@@ -102,23 +102,24 @@ function DashboardHr() {
                     src={firstIcon}
                     width={44}
                     height={44}
-                    style={{margin:"20px 10px"}}
+                    style={{margin:"20px 8px"}}
                     alt="icons"
                   />
-                  <Box sx={{marginRight:"20px"}}>
+                    <Box sx={{marginRight:"20px"}}>
                     <Typography
                       sx={{
                         color: "#1C1F21",
                         fontFamily: "Inter,sans-serif",
                         fontSize: "14px",
                         fontStyle: "normal",
+                        
                         fontWeight: 400,
                         lineHeight: "20px",
                         letterSpacing: "-0.28px",
-                        margin:"15px 0px 5px 0px"
+                        margin:"15px 0px 5px 0px",
                       }}
                     >
-                      Number of staff
+                      Average age
                     </Typography>
                     <Typography
                       sx={{
@@ -221,24 +222,28 @@ function DashboardHr() {
               </Box>
               </Box>
               <Box sx={{display:"flex"}}>
-              <Box sx={{width:"420px",height:"260px",padding:" 24px 24px 37px 24px",borderRadius: "20px",backgroundColor:"#F7F9FB",marginLeft:"40px"}}>
+              <Box sx={{width:"380px",height:"260px",padding:" 24px 14px 37px 24px",borderRadius: "20px",backgroundColor:"#F7F9FB",marginRight:"10px",marginLeft:"40px"}}>
                 <BarchartHorizontal/>
               </Box>
-              <Box className={"barvertical"} sx={{width:"400px",height:"260px",padding:" 10px 0px 37px 10px",borderRadius: "20px",backgroundColor:"#F7F9FB"}}>
+              <Box className={"barvertical"} sx={{width:"350px",height:"260px",padding:" 10px 0px 37px 10px",borderRadius: "20px",backgroundColor:"#F7F9FB"}}>
                 <LanguageChart/>
               </Box>
               </Box>
               <Box height={405} className={'barvertical'} sx={{margin:"20px 20px 20px 35px",padding:"25px",borderRadius:"20px",backgroundColor:"#F7F9FB", overflow:"scroll",overflowX:"hidden"}} >
                 <LavozimlarTable/>
               </Box>
-              <Box>
+              <Box sx={{display:"flex"}}>
+                <Box sx={{width:"50%",height:"400px"}}>
                 <DoughnutChart/>
+                </Box>
+                <Box sx={{width:"50%",height:"400px"}}>
+                <GenderPieChart/>
+                </Box>
               </Box>
             </Grid>
             <Grid
               xs={12}
               sm={4}
-              item
               sx={{
               }}
             >

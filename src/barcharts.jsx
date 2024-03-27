@@ -6,7 +6,7 @@ const LanguageChart = () => {
 
   useEffect(() => {
     // Fetch data from backend
-    fetch('http://64.227.121.87/api/v1/language/info')
+    fetch('https://dev.ikramovna.me/api/v1/language/info')
       .then(response => response.json())
       .then(data => setProficiencyData(data.language_proficiency))
       .catch(error => console.error('Error fetching data:', error));
@@ -61,7 +61,7 @@ const LanguageChart = () => {
   };
 
   return (
-    <div style={{ height: '250px', width: "300px", marginLeft: "0px", marginRight: "0px" }}>
+    <div style={{ height: '250px', width: "280px", marginLeft: "0px", marginRight: "0px" }}>
       {/* Adjust the height here */}
       <Bar data={chartConfig} width={330} options={options} />
     </div>

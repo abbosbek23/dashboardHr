@@ -39,7 +39,7 @@ const Login = () => {
     console.log(values);
 
     try {
-      const { data } = await axios.post("http://64.227.121.87/login",values);
+      const { data } = await axios.post("https://dev.ikramovna.me/login",values);
       if (data) {
         localStorage.setItem("access", data.access);
         navigate("/dashboard");

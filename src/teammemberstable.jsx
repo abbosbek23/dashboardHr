@@ -46,10 +46,10 @@ function LavozimlarTable() {
       <TableBody>
         {lavozimlar.map((lavozim, index) => (
           <TableRow key={index}>
-            <TableCell>{lavozim["Олдинги лавозими"]}</TableCell>
-            <TableCell>{lavozim["Хозирги лавозими"] ? <Typography sx={{width:"50%",padding:"0 8px",alignItems:"center",display:"flex",border: "1px solid rgba(28, 31, 33, 0.20)",borderRadius: "6px",backgroundColor:"white"}}><span style={{display:"block",width:"5px",height:"5px",borderRadius:"50%",backgroundColor:"#7AE582",marginRight:"3px",marginLeft:"0px"}}></span>Active</Typography> : <Typography sx={{alignItems:"center",display:"flex"}}><span style={{display:"block",width:"5px",height:"5px",borderRadius:"50%",backgroundColor:"red",marginRight:"3px",marginLeft:"0px"}}></span>Inactive</Typography>}</TableCell>
-            <TableCell>{lavozim["Янги лавозимга ўтган санаси"]}</TableCell>
-            <TableCell>{lavozim["Хозирги лавозими"]}</TableCell>
+            <TableCell sx={{padding:"10px"}}>{lavozim["Олдинги лавозими"]}</TableCell>
+            <TableCell sx={{padding:"10px"}}>{lavozim["Хозирги лавозими"] ? <Typography sx={{width:"50%",padding:"0 8px",alignItems:"center",display:"flex",border: "1px solid rgba(28, 31, 33, 0.20)",borderRadius: "6px",backgroundColor:"white"}}><span style={{display:"block",width:"5px",height:"5px",borderRadius:"50%",backgroundColor:"#7AE582",marginRight:"3px",marginLeft:"0px"}}></span>Active</Typography> : <Typography sx={{alignItems:"center",display:"flex"}}><span style={{display:"block",width:"5px",height:"5px",borderRadius:"50%",backgroundColor:"red",marginRight:"3px",marginLeft:"0px"}}></span>Inactive</Typography>}</TableCell>
+            <TableCell sx={{padding:"10px"}}>{lavozim["Янги лавозимга ўтган санаси"]}</TableCell>
+            <TableCell sx={{padding:"10px"}}>{lavozim["Хозирги лавозими"]}</TableCell>
           </TableRow>
         ))}
       </TableBody>

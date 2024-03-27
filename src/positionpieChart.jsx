@@ -134,6 +134,9 @@ const DoughnutChart = () => {
     type: 'doughnut',
     data: chartData,
     options: {
+      legend: {
+        display: false
+     },
     },
   };
 

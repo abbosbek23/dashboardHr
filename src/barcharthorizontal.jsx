@@ -11,7 +11,7 @@ const BarchartHorizontal = () => {
   useEffect(() => {
     const getLanguageInfo = async () => {
       try {
-        const { data } = await axios.get("http://64.227.121.87/api/v1/language/info");
+        const { data } = await axios.get("https://dev.ikramovna.me/api/v1/language/info");
         // console.log(data);
         setEducations(data.education);
       } catch (error) {
@@ -61,7 +61,7 @@ const BarchartHorizontal = () => {
   };
 
   return (
-    <div style={{ height: "188px", width: "462px", marginLeft: "0px", marginRight: "0px" }}>
+    <div style={{ height: "178px", width: "402px", marginLeft: "0px", marginRight: "0px" }}>
       <Bar style={{ marginLeft: "0px", marginRight: "0px" }} data={data} options={options} />
     </div>
   );
