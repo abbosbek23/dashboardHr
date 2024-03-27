@@ -1,7 +1,7 @@
 // import React from 'react'
 
 import { Typography } from "@mui/material";
-import Grid from '@material-ui/core/Grid';
+import Grid from "@mui/system/Unstable_Grid";
 import { Box } from "@mui/system";
 import firstIcon from "../src/assets/firsticon.png"
 import { useEffect, useState } from "react";
