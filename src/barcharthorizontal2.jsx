@@ -31,7 +31,7 @@ const TransferLineChart = () => {
   return (
     <div>
       <div style={{ textAlign: "center" }}>
-        <h4 style={{ fontFamily: "Poppins,sans-serif", padding: "15px 0" }}>Transfer Overview</h4>
+        <h4 style={{ fontFamily: "Poppins,sans-serif", padding: "15px 0" }}>Rotation between departments.</h4>
       </div>
       <LineChart
         width={350}

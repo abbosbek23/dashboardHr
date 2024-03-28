@@ -74,7 +74,8 @@ const GenderPieChart = () => {
             fontSize: "18px",
             fontStyle: "normal",
             fontWeight: 400,
-            lineHeight: "normal"
+            lineHeight: "normal",
+            marginRight:"5px"
           }}>Man</Typography>
           <Typography>{roundedGenderPercentages['male'] ? `${roundedGenderPercentages['male']}%` : ''}</Typography>
         </Box>
@@ -86,7 +87,8 @@ const GenderPieChart = () => {
             fontSize: "18px",
             fontStyle: "normal",
             fontWeight: 400,
-            lineHeight: "normal"
+            lineHeight: "normal",
+            marginRight:"5px"
           }}>Woman</Typography>
           <Typography>{roundedGenderPercentages['female'] ? `${roundedGenderPercentages['female']}%` : ''}</Typography>
         </Box>

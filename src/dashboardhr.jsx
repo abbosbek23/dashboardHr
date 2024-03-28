@@ -240,7 +240,7 @@ letterSpacing: "-0.48px",textAlign:"center",marginTop:"0px"}}>
                  fontStyle: "normal",
                  fontWeight: 700,
                  lineHeight: "30px",
-                 letterSpacing: "-0.36px",marginTop:"14px",marginLeft:"14px",textAlign:"center"}}>Percentage of women and men</Typography> 
+                 letterSpacing: "-0.36px",marginTop:"14px",marginLeft:"14px",textAlign:"center"}}>Gender</Typography> 
                 <GenderPieChart/>
                 </Box>
               </Box>
@@ -253,11 +253,11 @@ letterSpacing: "-0.48px",textAlign:"center",marginTop:"0px"}}>
                 marginRight:"20px"
               }}
             >
-                <Box sx={{padding: "0px 24px 15px 24px",borderRadius: "20px",background:"#F7F9FB",margin:"30px"}}>
+                <Box sx={{padding: "0px 24px 8px 24px",borderRadius: "20px",background:"#F7F9FB",margin:"30px"}}>
                       <EmployeeAgeDistribution/>
                 </Box>
                 <Box sx={{padding:"0px 30px 30px 30px",borderRadius:"20px",background:"#F7F9FB",margin:"30px"}}>
-                <Typography sx={{textAlign:"center",fontWeight:600}}>Staffs Nation</Typography>
+                <Typography sx={{textAlign:"center",fontWeight:600,paddingTop:"10px"}}>Staffs Nation</Typography>
                 <BarChart/>
                  
                 </Box>
