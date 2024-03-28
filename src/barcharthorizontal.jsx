@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
 
 const BarchartHorizontal = () => {
   const [educations, setEducations] = useState({});
@@ -41,10 +41,10 @@ const BarchartHorizontal = () => {
   <option value="female">Female</option>
 </select>
       </div>
-      <div style={{ width: "100%", height: "200px" }}>
+      <div style={{ width: "100%", height: "190px" }}>
         <BarChart
           width={370}
-          height={200}
+          height={190}
           data={chartData}
           layout="vertical"
           margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
@@ -52,7 +52,7 @@ const BarchartHorizontal = () => {
           <XAxis type="number" />
           <YAxis dataKey="name" type="category" />
           <Tooltip />
-          <Legend />
+          
           <Bar dataKey="count" name="Count" fill="#8884d8" barSize={12}  />
           <Bar dataKey="percent" name="Percentage" fill="#82ca9d" barSize={12} />
         </BarChart>

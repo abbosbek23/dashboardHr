@@ -25,6 +25,7 @@ function DashboardHr() {
   const [staffnumber,setStaffNumber] = useState({})
 
   useEffect(()=>{
+    document.body.style.backgroundColor = '#FFF';
    const getStaffnumber = async() => {
     try {
         const {data} = await axios.get("https://dev.ikramovna.me/api/v1/age")
@@ -258,11 +259,7 @@ letterSpacing: "-0.48px",textAlign:"center",marginTop:"0px"}}>
                 <Box sx={{padding:"10px 30px 30px 30px",borderRadius:"20px",background:"#F7F9FB",margin:"30px"}}>
                 <Typography sx={{textAlign:"center",fontWeight:600}}>Staffs Nation</Typography>
                 <BarChart/>
-                  {/* <HorizontalBarChart/> */}
-                </Box>
-                <Box  sx={{padding:"10px 30px 30px 30px",borderRadius:"20px",background:"#F7F9FB",margin:"30px"}}>
-                <Typography sx={{textAlign:"center",fontWeight:600}}>Leaders Nation </Typography>
-                {/* <BarChartComponent/> */}
+                 
                 </Box>
             </Grid>
         </Grid>
