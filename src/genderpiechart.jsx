@@ -1,49 +1,40 @@
 import { Doughnut } from 'react-chartjs-2';
 import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
-import dot from "./assets/dot2.svg"
-import dots from "./assets/dot.svg"
-import { useEffect, useState } from 'react';
+import dot from "./assets/dot2.svg";
+import dots from "./assets/dot.svg";
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-const GenderPieChart = () => {
 
-  const [genderCounts, setGenderCounts] = useState({})
-  const [genderPercentage, setGenderPercentage] = useState({})
+const GenderPieChart = () => {
+  const [genderData, setGenderData] = useState({
+    male: { count: 0, percentage: 0 },
+    female: { count: 0, percentage: 0 }
+  });
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchGenderData = async () => {
       try {
-        const { data } = await axios.get("https://dev.ikramovna.me/api/v1/gender")
-        setGenderCounts(data.counts)
-        console.log(data);
-        setGenderPercentage(data.percentages)
+        const response = await axios.get("https://dev.ikramovna.me/api/v1/gender");
+        const data = response.data;
+        setGenderData({
+          male: { count: data.male.count, percentage: data.male.percentage },
+          female: { count: data.woman.count, percentage: data.woman.percentage }
+        });
       } catch (error) {
-        console.log(error);
+        console.error('Error fetching gender data:', error);
       }
-    }
-    fetchData();
-  }, [])
-  console.log(genderPercentage);
+    };
 
-  const data = {
-    labels: ['Man', 'Woman'],
-    datasets: [
-      {
-        data: [genderCounts['ЭРКАК'] || 0, genderCounts['АЁЛ'] || 0],
-        backgroundColor: ['#95A4FC', '#FF4747'],
-        hoverBackgroundColor: ['#95A4FC', '#FF4747'],
-        borderSkipped: 'bottom', // Open the borders at the bottom
-        borderAlign: 'inner', // Align the border to the inner part of the segment
-      },
-    ],
-  };
+    fetchGenderData();
+  }, []);
 
   const options = {
     elements: {
       arc: {
-        borderWidth: 2, // Width of the border
-        borderColor: '#F7F9FB', // Color of the border
-        borderRadius: 15, // Radius of the border
+        borderWidth: 2,
+        borderColor: '#F7F9FB',
+        borderRadius: 10,
       },
     },
     plugins: {
@@ -52,14 +43,28 @@ const GenderPieChart = () => {
       }
     }
   };
-  const roundedGenderCounts = {
-    'ЭРКАК': parseFloat(genderPercentage['ЭРКАК']).toFixed(2),
-    'АЁЛ': parseFloat(genderPercentage['АЁЛ']).toFixed(2)
+
+  const roundedGenderPercentages = {
+    'male': parseFloat(genderData.male.percentage).toFixed(2),
+    'female': parseFloat(genderData.female.percentage).toFixed(2)
   };
 
   return (
-    <div style={{ width: '250px', height: '150px', marginTop: "38px" }}>
-      <Doughnut data={data} options={options} />
+    <div style={{ width: '280px', height: '190px', marginTop: "30px" }}>
+      <Doughnut
+        data={{
+          labels: ['Man', 'Woman'],
+          datasets: [
+            {
+              data: [genderData.male.count, genderData.female.count],
+              backgroundColor: ['#95A4FC', '#FF4747'],
+              hoverBackgroundColor: ['#95A4FC', '#FF4747'],
+              borderSkipped: 'bottom',
+              borderAlign: 'inner',
+            },
+          ],
+        }}
+        options={options} />
       <Box sx={{ display: "flex", marginTop: "30px" }}>
         <Box display={"flex"} sx={{ alignItems: "center" }}>
           <img src={dot} width={6} height={6} style={{ marginRight: "10px", marginLeft: "0px" }} alt="ellipse" />
@@ -71,7 +76,7 @@ const GenderPieChart = () => {
             fontWeight: 400,
             lineHeight: "normal"
           }}>Man</Typography>
-          <Typography>{roundedGenderCounts['ЭРКАК'] ? `${roundedGenderCounts['ЭРКАК']}%` : ''}</Typography>
+          <Typography>{roundedGenderPercentages['male'] ? `${roundedGenderPercentages['male']}%` : ''}</Typography>
         </Box>
         <Box display={"flex"} sx={{ alignItems: "center" }}>
           <img src={dots} width={6} height={6} style={{ marginRight: "10px", marginLeft: "10px" }} alt="ellipse" />
@@ -83,9 +88,11 @@ const GenderPieChart = () => {
             fontWeight: 400,
             lineHeight: "normal"
           }}>Woman</Typography>
-          <Typography>{roundedGenderCounts['АЁЛ'] ? `${roundedGenderCounts['АЁЛ']}%` : ''}</Typography>
+          <Typography>{roundedGenderPercentages['female'] ? `${roundedGenderPercentages['female']}%` : ''}</Typography>
         </Box>
       </Box>
-    </div>)
+    </div>
+  );
 };
+
 export default GenderPieChart;

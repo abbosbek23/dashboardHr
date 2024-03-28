@@ -15,7 +15,7 @@ import LanguageChart from "./barcharts";
 // import HorizontalBarChart from "./barcharthorizontal2"; 
 import DoughnutChart from "./positionpieChart";
 import BarChart from "./demobarchart";
-import BarChartComponent from "./boshliqlarbarchart";
+// import BarChartComponent from "./boshliqlarbarchart";
 import LavozimlarTable from "./teammemberstable";
 import GenderPieChart from "./genderpiechart";
 
@@ -23,27 +23,17 @@ function DashboardHr() {
 
 
   const [staffnumber,setStaffNumber] = useState({})
-  const [dismissedcount,setDismissedCount] = useState("")
 
   useEffect(()=>{
    const getStaffnumber = async() => {
     try {
-        const {data} = await axios.get("https://dev.ikramovna.me/api/v1/age-dynamics")
+        const {data} = await axios.get("https://dev.ikramovna.me/api/v1/age")
         // console.log(data);
         setStaffNumber(data)
     } catch (error) {
         console.log(error);
     }
    }
-   const getDismissedcount = async () => {
-    try {
-      const {data} = await axios.get("https://dev.ikramovna.me/api/v1/staff/dismissed")
-      setDismissedCount(data.total_count)
-    } catch (error) {
-      console.log(error);
-    }
-   }
-   getDismissedcount()
    getStaffnumber()
    
   },[])
@@ -93,8 +83,8 @@ function DashboardHr() {
                     >
                       Number of staff
                     </Typography>
-                    <Typography sx={{fontSize:"13px",marginBottom:"5px"}}>
-                    2020-2024 recruits
+                    <Typography sx={{fontSize:"12px",marginBottom:"5px"}}>
+                    Number current staffs
                     </Typography>
                     <Typography
                       sx={{
@@ -154,9 +144,9 @@ function DashboardHr() {
                         marginLeft:"0px"
                       }}
                     >
-                      {dismissedcount}
+                      {staffnumber.dismissed_count}
                     </Typography>
-                  </Box>
+                  </Box>    
                 </Box>
               </Box>
               <Box sx={{width:"100%", borderRadius: "20px", background: "#BAEDBD",marginRight:"0px",marginLeft:"0px"}}>
@@ -263,7 +253,7 @@ letterSpacing: "-0.48px",textAlign:"center",marginTop:"0px"}}>
               }}
             >
                 <Box sx={{padding: "0px 24px 24px 24px",borderRadius: "20px",background:"#F7F9FB",margin:"30px"}}>
-                      <EmployeeAgeDistribution agegroups={staffnumber.age_groups}/>
+                      <EmployeeAgeDistribution/>
                 </Box>
                 <Box sx={{padding:"10px 30px 30px 30px",borderRadius:"20px",background:"#F7F9FB",margin:"30px"}}>
                 <Typography sx={{textAlign:"center",fontWeight:600}}>Staffs Nation</Typography>
@@ -272,7 +262,7 @@ letterSpacing: "-0.48px",textAlign:"center",marginTop:"0px"}}>
                 </Box>
                 <Box  sx={{padding:"10px 30px 30px 30px",borderRadius:"20px",background:"#F7F9FB",margin:"30px"}}>
                 <Typography sx={{textAlign:"center",fontWeight:600}}>Leaders Nation </Typography>
-                <BarChartComponent/>
+                {/* <BarChartComponent/> */}
                 </Box>
             </Grid>
         </Grid>

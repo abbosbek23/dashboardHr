@@ -1,67 +1,65 @@
-import { Table, TableBody, TableCell, TableHead, TableRow, Typography, Button } from '@mui/material';
-import { Box } from '@mui/system';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useEffect, useState, Fragment } from 'react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
-function LavozimlarTable() {
-  const [lavozim, setLavozim] = useState([]);
-  const [expandedRowIndex, setExpandedRowIndex] = useState(null);
+const DismissalLineChart = () => {
+  const [dismissalData, setDismissalData] = useState(null);
 
   useEffect(() => {
-    const getLavozim = async () => {
+    const fetchData = async () => {
       try {
-        const { data } = await axios.get("https://dev.ikramovna.me/api/v1/staff/transfer");
-        setLavozim(data);
+        const response = await axios.get("https://dev.ikramovna.me/api/v1/dismissal");
+        setDismissalData(response.data);
       } catch (error) {
-        console.log(error);
+        console.error('Error fetching dismissal data:', error);
       }
     };
-    getLavozim();
+
+    fetchData();
   }, []);
 
-  const handleExpandRow = (index) => {
-    setExpandedRowIndex(index === expandedRowIndex ? null : index);
-  };
+  if (!dismissalData) {
+    return <div>Loading...</div>;
+  }
+
+  const reasons = Object.keys(dismissalData.reasons_by_year);
+  const years = Object.keys(dismissalData.reasons_by_year[reasons[0]]);
+
+  const chartData = years.map(year => {
+    const dataEntry = { year };
+    reasons.forEach(reason => {
+      dataEntry[reason] = dismissalData.reasons_by_year[reason][year];
+    });
+    return dataEntry;
+  });
 
   return (
-    <Box>
-      <Typography sx={{ marginLeft: "15px", color: "#1C1F21", fontSize: "24px",textAlign:"center" }}>Transfer Staffs</Typography>
-      <Table sx={{ height: "100%" }}>
-        <TableHead>
-          <TableRow sx={{ width: "100%" }}>
-            <TableCell sx={{ width: "33.2%", padding: "10px", fontWeight: 600 }}>Previous position</TableCell>
-            <TableCell sx={{ width: "34%", padding: "10px", fontWeight: 600, textAlign: "center" }}>Date of transfer</TableCell>
-            <TableCell sx={{ width: "33.2%", padding: "10px", fontWeight: 600 }}>Current position</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {lavozim.map((lavozimlar, index) => (
-            <Fragment key={index}>
-              <TableRow>
-                <TableCell sx={{ padding: "10px" }}>{lavozimlar["Олдинги лавозими"]}</TableCell>
-                <TableCell sx={{ padding: "10px", textAlign: "center" }}>{lavozimlar["Янги лавозимга ўтган санаси"]}</TableCell>
-                <TableCell sx={{ padding: "10px" }}>
-                  {expandedRowIndex === index ? (
-                    <div>
-                      {lavozimlar["Хозирги лавозими"]}
-                      <Button onClick={() => handleExpandRow(index)}>Collapse</Button>
-                    </div>
-                  ) : (
-                    <div>
-                      <div style={{ maxHeight: expandedRowIndex === index ? "none" : "50px", overflow: "hidden" }}>
-                        {lavozimlar["Хозирги лавозими"]}
-                      </div>
-                      <Button onClick={() => handleExpandRow(index)}>Expand</Button>
-                    </div>
-                  )}
-                </TableCell>
-              </TableRow>
-            </Fragment>
-          ))}
-        </TableBody>
-      </Table>
-    </Box>
+    <div>
+      <div style={{textAlign:"center"}}>
+        <h4 style={{fontFamily:"Poppins,sans-serif"}}>Voluntary and Involuntary Turnover</h4>
+      </div>
+    <LineChart
+      width={700}
+      height={350}
+      data={chartData}
+      margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
+    >
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="year" />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      {reasons.map((reason, index) => (
+        <Line
+          key={index}
+          type="monotone"
+          dataKey={reason}
+          stroke={`#${Math.floor(Math.random() * 16777215).toString(16)}`} // Random color
+        />
+      ))}
+    </LineChart>
+    </div>
   );
-}
+};
 
-export default LavozimlarTable;
+export default DismissalLineChart;

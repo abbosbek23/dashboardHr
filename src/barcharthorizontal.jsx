@@ -1,66 +1,62 @@
 import axios from 'axios';
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip } from 'chart.js';
 import { useEffect, useState } from 'react';
-import { Bar } from 'react-chartjs-2';
-
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip);
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 
 const BarchartHorizontal = () => {
   const [educations, setEducations] = useState({});
+  const [selectedGender, setSelectedGender] = useState('default');
 
   useEffect(() => {
-    const getLanguageInfo = async () => {
+    const fetchEducationData = async () => {
       try {
-        const { data } = await axios.get("https://dev.ikramovna.me/api/v1/language/info");
-        // console.log(data);
-        setEducations(data.education);
+        const { data } = await axios.get("https://dev.ikramovna.me/api/v1/education");
+        setEducations(data.default); // Set the default education data initially
       } catch (error) {
-        // console.log(error);
+        console.error('Error fetching education data:', error);
       }
     };
-    getLanguageInfo();
+    fetchEducationData();
   }, []);
 
-  const options = {
-    indexAxis: 'y',
-    elements: {
-      bar: {
-        borderWidth: 0,
-        borderRadius: 10,
-      },
-    },
-    responsive: true,
-    plugins: {
-      legend: {
-        display: false,
-      },
-    },
-    title: {
-      display: false,
-      text: 'Education level distribution',
-      fontSize: 30 // Title ning font o'lchami 30px
-    },
+  const handleGenderChange = async (gender) => {
+    try {
+      const { data } = await axios.get(`https://dev.ikramovna.me/api/v1/education?gender=${gender}`);
+      setEducations(data[selectedGender]);
+      setSelectedGender(gender);
+    } catch (error) {
+      console.error('Error fetching education data for selected gender:', error);
+    }
   };
 
-  const labels = ["Bachelor", "Master", "Incomplete Higher", "High", "Medium Special"];
-  const chartDatas = educations ? Object.entries(educations).map(([ageRange, value]) => ({ name: ageRange, value: value })) : [];
-  const data = {
-    labels,
-    datasets: [
-      {
-        label: 'Education level distribution',
-        data: chartDatas.map(data => data.value),
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: ["#BAEDBD", "#95A4FC", "#FFE999", "#B1E3FF", "#C6C7F8"],
-        barThickness: 15,
-        width:'100%'
-      },
-    ],
-  };
+  const chartData = educations
+    ? Object.entries(educations).map(([education, data]) => ({ name: education, count: data.count, percent: data.percent }))
+    : [];
 
   return (
-    <div style={{ height: "200px", width: "100%", marginTop:"10px", marginLeft: "10px", marginRight: "0px" }}>
-      <Bar style={{ marginLeft: "0px", marginRight: "0px" }} height={220} width={400} data={data} options={options} />
+    <div>
+      <div style={{paddingTop:"10px",paddingLeft:"10px",textAlign:"center"}}>
+      <select  onChange={(e) => handleGenderChange(e.target.value)} style={{ padding: '5px', borderRadius: '5px', borderColor: '#ccc', fontSize: '14px' }}>
+   <option value="default">All Statistics</option>     
+  <option value="male">Male</option>
+  <option value="female">Female</option>
+</select>
+      </div>
+      <div style={{ width: "100%", height: "200px" }}>
+        <BarChart
+          width={370}
+          height={200}
+          data={chartData}
+          layout="vertical"
+          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+        >
+          <XAxis type="number" />
+          <YAxis dataKey="name" type="category" />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="count" name="Count" fill="#8884d8" barSize={12}  />
+          <Bar dataKey="percent" name="Percentage" fill="#82ca9d" barSize={12} />
+        </BarChart>
+      </div>
     </div>
   );
 };
