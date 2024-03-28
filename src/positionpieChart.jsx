@@ -125,7 +125,7 @@ const DoughnutChart = () => {
           <option value="female">Female</option>
         </select>
         </div>
-      <div style={{ height: "230px", width: "230px", marginTop: "15px" }}>
+      <div style={{ height: "210px", width: "230px", marginTop: "15px" }}>
         <canvas ref={chartRef} />
       </div>
     </div>
