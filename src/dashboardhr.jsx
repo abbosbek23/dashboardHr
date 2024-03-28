@@ -12,7 +12,7 @@ import EmployeeAgeDistribution from './barchart';
 import BarchartHorizontal from "./barcharthorizontal";
 import "./index.css"
 import LanguageChart from "./barcharts";
-// import HorizontalBarChart from "./barcharthorizontal2"; 
+import HorizontalBarChart from "./barcharthorizontal2"; 
 import DoughnutChart from "./positionpieChart";
 import BarChart from "./demobarchart";
 // import BarChartComponent from "./boshliqlarbarchart";
@@ -223,7 +223,7 @@ letterSpacing: "-0.48px",textAlign:"center",marginTop:"0px"}}>
                 <LavozimlarTable/>
               </Box>
               <Box sx={{display:"flex",marginLeft:"20px"}}>
-                <Box sx={{width:"45%",height:"345px",borderRadius:"20px",backgroundColor:"#F7F9FB",marginLeft:"25px",}}>
+                <Box sx={{width:"47%",height:"345px",borderRadius:"20px",backgroundColor:"#F7F9FB",marginLeft:"25px",}}>
                 <Typography sx={{color:"#1C1F21",
                  fontFamily: "Poppins,sans-serif",
                  fontSize: "18px",
@@ -233,7 +233,7 @@ letterSpacing: "-0.48px",textAlign:"center",marginTop:"0px"}}>
                  letterSpacing: "-0.36px",marginTop:"14px",marginLeft:"14px",textAlign:"center"}}>Positions</Typography>  
                 <DoughnutChart/>
                 </Box>
-                <Box sx={{width:"45%",height:"345px",borderRadius:"20px",backgroundColor:"#F7F9FB",marginRight:"0px",marginLeft:"0px"}}>
+                <Box sx={{width:"47%",height:"345px",borderRadius:"20px",backgroundColor:"#F7F9FB",marginRight:"0px",marginLeft:"0px"}}>
                 <Typography sx={{color:"#1C1F21",
                  fontFamily: "Poppins,sans-serif",
                  fontSize: "18px",
@@ -253,13 +253,16 @@ letterSpacing: "-0.48px",textAlign:"center",marginTop:"0px"}}>
                 marginRight:"20px"
               }}
             >
-                <Box sx={{padding: "0px 24px 24px 24px",borderRadius: "20px",background:"#F7F9FB",margin:"30px"}}>
+                <Box sx={{padding: "0px 24px 15px 24px",borderRadius: "20px",background:"#F7F9FB",margin:"30px"}}>
                       <EmployeeAgeDistribution/>
                 </Box>
-                <Box sx={{padding:"10px 30px 30px 30px",borderRadius:"20px",background:"#F7F9FB",margin:"30px"}}>
+                <Box sx={{padding:"0px 30px 30px 30px",borderRadius:"20px",background:"#F7F9FB",margin:"30px"}}>
                 <Typography sx={{textAlign:"center",fontWeight:600}}>Staffs Nation</Typography>
                 <BarChart/>
                  
+                </Box>
+                <Box sx={{padding:"0px 30px 30px 30px",borderRadius:"20px",background:"#F7F9FB",margin:"30px"}}>
+                <HorizontalBarChart/>          
                 </Box>
             </Grid>
         </Grid>
