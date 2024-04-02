@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
@@ -8,24 +9,19 @@ const BarchartHorizontal = () => {
 
   useEffect(() => {
     const fetchEducationData = async () => {
-      try {
-        const { data } = await axios.get("https://dev.ikramovna.me/api/v1/education");
-        setEducations(data.default); // Set the default education data initially
-      } catch (error) {
-        console.error('Error fetching education data:', error);
-      }
-    };
-    fetchEducationData();
-  }, []);
+      const url = selectedGender === 'default'
+        ? "https://dev.ikramovna.me/api/v1/education"
+        : `https://dev.ikramovna.me/api/v1/education?gender=${selectedGender}`;
 
-  const handleGenderChange = async (gender) => {
-    try {
-      const { data } = await axios.get(`https://dev.ikramovna.me/api/v1/education?gender=${gender}`);
-      setEducations(data[selectedGender]);
-      setSelectedGender(gender);
-    } catch (error) {
-      console.error('Error fetching education data for selected gender:', error);
-    }
+      const response = await axios.get(url);
+      setEducations(response.data[selectedGender]);
+    };
+
+    fetchEducationData();
+  }, [selectedGender]);
+
+  const handleGenderChange = (gender) => {
+    setSelectedGender(gender);
   };
 
   const chartData = educations
@@ -34,31 +30,40 @@ const BarchartHorizontal = () => {
 
   return (
     <div>
-      <div style={{paddingTop:"10px",paddingLeft:"10px",textAlign:"center"}}>
-      <select  onChange={(e) => handleGenderChange(e.target.value)} style={{ padding: '5px', borderRadius: '5px', borderColor: '#ccc', fontSize: '14px' }}>
-   <option value="default">All Statistics</option>     
-  <option value="male">Male</option>
-  <option value="female">Female</option>
-</select>
+      <div style={{ display: 'flex',marginLeft:"100px",marginTop:"10px",  marginBottom: '10px' }}>
+        <button onClick={() => handleGenderChange('default')} style={buttonStyle}>All Statistics</button>
+        <button onClick={() => handleGenderChange('male')} style={buttonStyle}>Male</button>
+        <button onClick={() => handleGenderChange('female')} style={buttonStyle}>Female</button>
       </div>
-      <div style={{ width: "100%", height: "190px" }}>
+      <div style={{ width: "100%", height: "390px" }}>
         <BarChart
-          width={370}
-          height={190}
+          width={450}
+          height={380}
           data={chartData}
           layout="vertical"
           margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
         >
           <XAxis type="number" />
           <YAxis dataKey="name" type="category" />
-          <Tooltip />
+          <Tooltip formatter={(value) => `${value}`} />
           
-          <Bar dataKey="count" name="Count" fill="#8884d8" barSize={12}  />
-          <Bar dataKey="percent" name="Percentage" fill="#82ca9d" barSize={12} />
+          <Bar dataKey="count" name="Count" fill="#8884d8" barSize={35} radius={[0, 5, 5, 0]} animationDuration={1000} />
+          <Bar dataKey="percent" name="Percentage" fill="#82ca9d" barSize={35} radius={[0, 5, 5, 0]} animationDuration={1000} />
         </BarChart>
       </div>
     </div>
   );
+};
+
+const buttonStyle = {
+  padding: '8px 16px',
+  borderRadius: '5px',
+  border: 'none',
+  marginRight: '10px',
+  marginLeft:"10px",
+  backgroundColor: '#fff',
+  color: '#000',
+  cursor: 'pointer',
 };
 
 export default BarchartHorizontal;

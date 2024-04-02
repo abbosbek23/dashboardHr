@@ -1,6 +1,7 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import { Typography } from '@mui/material';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -56,7 +57,7 @@ const EmployeeAgeDistribution = () => {
           backgroundColor: ["#95A4FC", "#BAEDBD", "#1C1F21", "#B1E3FF", "#FFE999"],
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1,
-          barThickness: 35,
+          barThickness: 40,
         },
       ],
     };
@@ -84,29 +85,34 @@ const EmployeeAgeDistribution = () => {
         position: 'top',
         display: false
       },
-      title: {
-        display: true,
-        text: 'Employee Age Distribution',
-        color: "#000",
-        fontSize: "21px"
-      },
+      
     },
   };
 
   return (
     <div>
-      <div style={{paddingTop:"10px",textAlign:"center"}}>
-      <select  onChange={(e) => handleGenderChange(e.target.value)} style={{ padding: '5px', borderRadius: '5px', borderColor: '#ccc', fontSize: '16px' }}>
-   <option value="age_groups">All Statistics</option>     
-  <option value="male">Male</option>
-  <option value="woman">Woman</option>
-</select>
+      <Typography sx={{textAlign:"center",fontWeight:"600",marginTop:"10px"}}>Employee Age Distribution</Typography>
+      <div style={{ display: 'flex', justifyContent: 'center', paddingTop: "10px", paddingBottom: "10px", textAlign: "center" }}>
+        <button onClick={() => handleGenderChange('age_groups')} style={buttonStyle}>All Statistics</button>
+        <button onClick={() => handleGenderChange('male')} style={buttonStyle}>Male</button>
+        <button onClick={() => handleGenderChange('woman')} style={buttonStyle}>Woman</button>
       </div>
-      <div style={{ height: "330px", width: "283px" }}>
-        {chartData && <Bar height={0} data={chartData} options={options} />}
+      <div style={{ height: "330px", width: "100%", marginLeft: "0px", marginRight: "0px" }}>
+        {chartData && <Bar height={0} width={400} data={chartData} options={options} />}
       </div>
     </div>
   );
+};
+
+const buttonStyle = {
+  padding: '8px 16px',
+  borderRadius: '5px',
+  border: 'none',
+  marginRight: '10px',
+  marginLeft: '10px',
+  backgroundColor: '#fff',
+  color: '#000',
+  cursor: 'pointer',
 };
 
 export default EmployeeAgeDistribution;

@@ -1,17 +1,16 @@
-// import { useState } from 'react'
-// import PieCharts2 from './charts'    
-// import Login from './login'
-import Routes from './routes'
-
+import './index.css'; // Import your CSS file for styling if needed
+import Sidebar from './sidebar';
+import Routes from './routes';
 
 function App() {
-  // const [count, setCount] = useState(0)
-
   return (
-    <>
-     <Routes/>
-    </>
-  )
+    <div className="app">
+      <Sidebar />
+      <div className="content">
+        <Routes />
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;

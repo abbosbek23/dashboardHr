@@ -3,8 +3,24 @@
   padding: 0;
   box-sizing: border-box;
 }
-#root{
+/* #root{
+} */
+
+.app {
+  display: flex;
+  height: 100vh; /* Adjust as needed */
 }
+
+.sidebar {
+  flex: 0 0 30%; /* Sidebar occupies 30% of the width, doesn't grow or shrink */
+}
+
+.content {
+  width: 100%;
+  padding-left: 250px;
+  height: 100vh; /* Routes occupy remaining space */
+}
+
 .login{
   background-color: #F5EFE1;
   width: 100%;

@@ -1,0 +1,46 @@
+.sidebar {
+    position: fixed; /* Fix the sidebar to the viewport */
+    top: 0; /* Start at the top of the page */
+    left: 0; /* Start at the left side of the page */
+    width: 250px; /* Set the width of the sidebar */
+    height: 100vh; /* Set the height to 100% of the viewport */
+    background-color: #FFF; /* Set the background color */
+    transition: all 0.3s ease-in-out; /* Add a smooth transition effect */
+    z-index: 10; /* Ensure the sidebar stays on top of other content */
+    padding: 20px;
+  }
+  
+  
+  .sidebar h2 {
+    padding: 10px; /* Add padding to the sidebar title */
+    text-align: center; /* Center the title text */
+    font-size: 18px; /* Set the title font size */
+  }
+  
+  .sidebar button {
+    display: block; /* Display the button as a block-level element */
+    width: 100px; /* Make the button full width */
+    padding: 10px; /* Add padding to the button */
+    margin-top: 10px; /* Add margin top to the button */
+    border: none; /* Remove the default button border */
+    background-color: #4CAF50; /* Set the button background color */
+    color: white; /* Set the button text color */
+    font-size: 16px; /* Set the button font size */
+    cursor: pointer; /* Make the button clickable */
+    transition: all 0.3s ease-in-out; /* Add a smooth transition effect */
+  }
+  
+  .sidebar button:hover {
+    background-color: #3e8e41; /* Change button background color on hover */
+  }
+  .sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .sidebar ul li {
+    padding: 10px;
+  }
+  
+  

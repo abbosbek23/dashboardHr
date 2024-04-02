@@ -34,8 +34,8 @@ const TransferLineChart = () => {
         <h4 style={{ fontFamily: "Poppins,sans-serif", padding: "15px 0" }}>Rotation between departments.</h4>
       </div>
       <LineChart
-        width={350}
-        height={260}
+        width={500}
+        height={350}
         data={chartData}
         margin={{ top: 20, right: 20, left: 0, bottom: 5 }}
       >
