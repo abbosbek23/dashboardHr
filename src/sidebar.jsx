@@ -55,6 +55,7 @@ const Sidebar = () => {
           <li onClick={() => {navigate('nationoverview'); handleButtonClick('nationoverview')}} style={{backgroundColor: activeButton === 'nationoverview' ? "#00DEA3" : "white",color:activeButton === 'nationoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Nation Overview</li>
           <li onClick={() => {navigate('interdepartment'); handleButtonClick('interdepartment')}} style={{backgroundColor: activeButton === 'interdepartment' ? "#00DEA3" : "white",color:activeButton === 'interdepartment' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Interdeparment Overview</li>
           <li onClick={() => {navigate('genderoverview'); handleButtonClick('genderoverview')}} style={{backgroundColor: activeButton === 'genderoverview' ? "#00DEA3" : "white",color:activeButton === 'genderoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Gender Overview</li>
+          <li onClick={() => {navigate('departmentoverview'); handleButtonClick('departmentoverview')}} style={{backgroundColor: activeButton === 'departmentoverview' ? "#00DEA3" : "white",color:activeButton === 'departmentoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Department Overview</li>
         </ul>
       </Box>
       <Box>

@@ -5,6 +5,7 @@ import dot from "./assets/dot2.svg";
 import dots from "./assets/dot.svg";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import 'chart.js/auto';
 
 const GenderPieChart = () => {
   const [genderData, setGenderData] = useState({

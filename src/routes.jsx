@@ -7,6 +7,7 @@ import NationOverview from './NationOverview';
 import Interdepartmentoverview from './Interdepartmentoverview';
 import Genderoverview from './genderoverview';
 import Experience from './Experience';
+import Departmentoverview from './Departmentoverview';
 
 
 function Routes() {
@@ -22,8 +23,11 @@ function Routes() {
        <Route path='/interdepartment' element={<Interdepartmentoverview/>}/>
        <Route path='/dashboard/genderoverview' element={<Genderoverview/>}/>
        <Route path='/genderoverview' element={<Genderoverview/>}/>
+       <Route path='/dashboard/departmentoverview' element={<Departmentoverview/>}/>
+       <Route path='/departmentoverview' element={<Departmentoverview/>}/>
        <Route path='/dashboard/experience' element={<Experience/>}/>
        <Route path='/experience' element={<Experience/>}/> 
+       
      </Switch>
   )
 }
