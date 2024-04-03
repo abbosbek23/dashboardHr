@@ -51,7 +51,7 @@ const GenderPieChart = () => {
   };
 
   return (
-    <div style={{ width: '280px', height: '230px', marginTop: "30px" }}>
+    <div style={{ width: '280px', height: '450px', marginTop: "30px" }}>
       <Doughnut
         data={{
           labels: ['Man', 'Woman'],

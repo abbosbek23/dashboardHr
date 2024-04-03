@@ -66,7 +66,7 @@ const MalesPieChart = () => {
   };
 
   return (
-    <div style={{ width: '280px', height: '200px', marginTop: "30px" }}>
+    <div style={{ width: '280px', height: '450px', marginTop: "30px" }}>
       <Doughnut
         data={{
           labels: Object.keys(ageData),

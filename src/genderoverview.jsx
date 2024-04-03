@@ -16,10 +16,10 @@ const Genderoverview = () => {
 
 
   return (
-    <>
+    <Box>
     <NavbargenderOverview/>
     <div style={{display:"flex"}}>
-    <Box sx={{width:"45%",height:"405px",borderRadius:"20px",backgroundColor:"#F7F9FB",marginRight:"0px",marginLeft:"15px"}}>
+    <Box sx={{width:"45%",height:"505px",borderRadius:"20px",backgroundColor:"#F7F9FB",marginRight:"0px",marginLeft:"15px"}}>
                 <Typography sx={{color:"#1C1F21",
                  fontFamily: "Poppins,sans-serif",
                  fontSize: "18px",
@@ -29,7 +29,7 @@ const Genderoverview = () => {
                  letterSpacing: "-0.36px",marginTop:"14px",marginLeft:"14px",textAlign:"center"}}>Gender</Typography> 
                 <GenderPieChart/>
     </Box>
-    <Box sx={{width:"45%",height:"405px",borderRadius:"20px",backgroundColor:"#F7F9FB",marginLeft:"25px",}}>
+    <Box sx={{width:"45%",height:"505px",borderRadius:"20px",backgroundColor:"#F7F9FB",marginLeft:"25px",}}>
                 <Typography sx={{color:"#1C1F21",
                  fontFamily: "Poppins,sans-serif",
                  fontSize: "18px",
@@ -40,7 +40,7 @@ const Genderoverview = () => {
                 {/* <DoughnutChart/> */}
                 <MalesPieChart/>
                 </Box>
-                <Box sx={{width:"45%",height:"405px",borderRadius:"20px",backgroundColor:"#F7F9FB",marginLeft:"25px",}}>
+                <Box sx={{width:"45%",height:"505px",borderRadius:"20px",backgroundColor:"#F7F9FB",marginLeft:"25px",}}>
                 <Typography sx={{color:"#1C1F21",
                  fontFamily: "Poppins,sans-serif",
                  fontSize: "18px",
@@ -52,7 +52,7 @@ const Genderoverview = () => {
                 <FemalePieChart/>
                 </Box>
     </div>
-    </>
+    </Box>
   )
 }
 
