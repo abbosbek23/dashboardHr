@@ -47,23 +47,24 @@ const Sidebar = () => {
       </Box>
       <img src={line} width={"100%"} alt="line" />
       <Box>
-        <Typography onClick={handleDashboardClick} sx={{width:"80%",marginTop:"20px",padding:"10px",borderRadius:"10px",color:isDashboardOpen ?"white":"#00DEA3",display:"flex",alignItems:"center",transition:"0.2s linear",backgroundColor:isDashboardOpen ? "#00DEA3":"white"}}>
+        <Typography onClick={handleDashboardClick} sx={{width:"80%",marginTop:"20px",padding:"10px",borderRadius:"10px",color:isDashboardOpen ?"white":"#00DEA3",display:"flex",alignItems:"center",transition:"0.2s linear",backgroundColor:isDashboardOpen ? "#00DEA3":"white",cursor:"pointer"}}>
           <img style={{marginLeft:"10px",marginRight:"15px", backgroundColor: activeButton === 'dashboard' ? "#00DEA3" : "white"}} src={dashboardicon} width={20} height={20} onClick={() => handleButtonClick('dashboard')}/> Dashboard
         </Typography>
         <ul ref={dashboardRef} style={{height: dashboardHeight, overflow: 'hidden',marginTop:"10px", transition: 'height 0.5s'}}>
-          <li onClick={() => {navigate('edulang'); handleButtonClick('edulang')}} style={{backgroundColor: activeButton === 'edulang' ? "#00DEA3" : "white",color:activeButton === 'edulang' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>EduLang Overview</li>
-          <li onClick={() => {navigate('nationoverview'); handleButtonClick('nationoverview')}} style={{backgroundColor: activeButton === 'nationoverview' ? "#00DEA3" : "white",color:activeButton === 'nationoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Nation Overview</li>
-          <li onClick={() => {navigate('interdepartment'); handleButtonClick('interdepartment')}} style={{backgroundColor: activeButton === 'interdepartment' ? "#00DEA3" : "white",color:activeButton === 'interdepartment' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Interdeparment Overview</li>
-          <li onClick={() => {navigate('genderoverview'); handleButtonClick('genderoverview')}} style={{backgroundColor: activeButton === 'genderoverview' ? "#00DEA3" : "white",color:activeButton === 'genderoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Gender Overview</li>
           <li onClick={() => {navigate('departmentoverview'); handleButtonClick('departmentoverview')}} style={{backgroundColor: activeButton === 'departmentoverview' ? "#00DEA3" : "white",color:activeButton === 'departmentoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Department Overview</li>
+          <li onClick={() => {navigate('interdepartment'); handleButtonClick('interdepartment')}} style={{backgroundColor: activeButton === 'interdepartment' ? "#00DEA3" : "white",color:activeButton === 'interdepartment' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Interdeparment Overview</li>
+          <li onClick={() => {navigate('ageoverview'); handleButtonClick('ageoverview')}} style={{backgroundColor: activeButton === 'ageoverview' ? "#00DEA3" : "white",color:activeButton === 'ageoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Age Overview</li>
+          <li onClick={() => {navigate('genderoverview'); handleButtonClick('genderoverview')}} style={{backgroundColor: activeButton === 'genderoverview' ? "#00DEA3" : "white",color:activeButton === 'genderoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Gender Overview</li>
+          <li onClick={() => {navigate('edulang'); handleButtonClick('edulang')}} style={{backgroundColor: activeButton === 'edulang' ? "#00DEA3" : "white",color:activeButton === 'edulang' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Education Overview</li>
+          {/* <li onClick={() => {navigate('nationoverview'); handleButtonClick('nationoverview')}} style={{backgroundColor: activeButton === 'nationoverview' ? "#00DEA3" : "white",color:activeButton === 'nationoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Nation Overview</li> */}
         </ul>
       </Box>
       <Box>
-        <Typography onClick={handleEmployeeClick} sx={{width:"80%",marginTop:"20px",padding:"10px",borderRadius:"10px",color:isEmployeeOpen ?"white":"#00DEA3",display:"flex",alignItems:"center",transition:"0.2s linear",backgroundColor:isEmployeeOpen ? "#00DEA3":"white"}}>
+        <Typography onClick={handleEmployeeClick} sx={{width:"80%",marginTop:"20px",padding:"10px",borderRadius:"10px",color:isEmployeeOpen ?"white":"#00DEA3",display:"flex",alignItems:"center",transition:"0.2s linear",backgroundColor:isEmployeeOpen ? "#00DEA3":"white",cursor:"pointer"}}>
           <img style={{marginLeft:"10px",marginRight:"15px", backgroundColor: activesButton === 'dashboard' ? "#00DEA3" : "white"}} src={dashboardicon} width={20} height={20} onClick={() => handleButtonClick('dashboard')}/> Employee
         </Typography>
         <ul ref={EmployeeRef} style={{height: EmployeeHeight, overflow: 'hidden',marginTop:"10px", transition: 'height 0.5s'}}>
-          <li onClick={() => {navigate('edulang'); handleButtonClicks('edulang')}} style={{backgroundColor: activesButton === 'edulang' ? "#00DEA3" : "white",color:activesButton === 'edulang' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Employee Overview</li>
+          <li onClick={() => {navigate('employeetable'); handleButtonClicks('employeetable')}} style={{backgroundColor: activesButton === 'employeetable' ? "#00DEA3" : "white",color:activesButton === 'employeetable' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Employee Overview</li>
           <li onClick={() => {navigate('experience'); handleButtonClicks('experience')}} style={{backgroundColor: activesButton === 'experience' ? "#00DEA3" : "white",color:activesButton === 'experience' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Experience Overview</li>
         </ul>
       </Box>

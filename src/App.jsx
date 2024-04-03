@@ -4,12 +4,24 @@ import Routes from './routes';
 
 function App() {
   return (
-    <div className="app">
+    <>
+    {
+      window.location.href === "http://localhost:5173/" && window.location.href === "https://xbuz.netlify.app/" ? ( <div className="content">
+      <Routes/>
+    </div>):(<div className="app">
       <Sidebar />
       <div className="content">
         <Routes />
       </div>
-    </div>
+    </div>)
+    }
+    {/* <div className="app">
+      <Sidebar />
+      <div className="content">
+        <Routes />
+      </div>
+    </div> */}
+    </>
   );
 }
 

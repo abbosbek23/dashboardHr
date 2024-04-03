@@ -91,7 +91,7 @@ const EmployeeAgeDistribution = () => {
 
   return (
     <div>
-      <Typography sx={{textAlign:"center",fontWeight:"600",marginTop:"10px"}}>Employee Age Distribution</Typography>
+      <Typography sx={{textAlign:"center",fontWeight:"600",paddingTop:"10px"}}>Employee Age Distribution</Typography>
       <div style={{ display: 'flex', justifyContent: 'center', paddingTop: "10px", paddingBottom: "10px", textAlign: "center" }}>
         <button onClick={() => handleGenderChange('age_groups')} style={buttonStyle}>All Statistics</button>
         <button onClick={() => handleGenderChange('male')} style={buttonStyle}>Male</button>

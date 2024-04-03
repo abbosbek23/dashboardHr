@@ -14,7 +14,7 @@ const MalesPieChart = () => {
     '51 and above': 0
   });
 
-  const backgroundColor = ['#95A4FC', '#FF4747', "green", "yellow"];
+  const backgroundColor = ['#95A4FC', '#FF4747', "#baedbd", "yellow"];
 
   useEffect(() => {
     const fetchData = async () => {

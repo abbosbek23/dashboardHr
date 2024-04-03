@@ -40,7 +40,7 @@ const Genderoverview = () => {
                 {/* <DoughnutChart/> */}
                 <MalesPieChart/>
                 </Box>
-                <Box sx={{width:"45%",height:"505px",borderRadius:"20px",backgroundColor:"#F7F9FB",marginLeft:"25px",}}>
+                <Box sx={{width:"45%",height:"505px",borderRadius:"20px",backgroundColor:"#F7F9FB",marginLeft:"25px",marginRight:"15px"}}>
                 <Typography sx={{color:"#1C1F21",
                  fontFamily: "Poppins,sans-serif",
                  fontSize: "18px",

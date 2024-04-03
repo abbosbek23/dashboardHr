@@ -35,7 +35,7 @@ const Login = () => {
       const { data } = await axios.post('https://dev.ikramovna.me/login', values);
       if (data) {
         localStorage.setItem('access', data.access);
-        navigate('/dashboard');
+        navigate('/departmentoverview');
       }
     } catch (error) {
       console.error('Error logging in:', error);
