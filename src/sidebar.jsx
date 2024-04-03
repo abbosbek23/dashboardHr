@@ -65,7 +65,6 @@ const Sidebar = () => {
         </Typography>
         <ul ref={EmployeeRef} style={{height: EmployeeHeight, overflow: 'hidden',marginTop:"10px", transition: 'height 0.5s'}}>
           <li onClick={() => {navigate('employeetable'); handleButtonClicks('employeetable')}} style={{backgroundColor: activesButton === 'employeetable' ? "#00DEA3" : "white",color:activesButton === 'employeetable' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Employee Overview</li>
-          <li onClick={() => {navigate('experience'); handleButtonClicks('experience')}} style={{backgroundColor: activesButton === 'experience' ? "#00DEA3" : "white",color:activesButton === 'experience' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Experience Overview</li>
         </ul>
       </Box>
     </div>
