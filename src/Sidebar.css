@@ -8,6 +8,7 @@
     transition: all 0.3s ease-in-out; /* Add a smooth transition effect */
     z-index: 10; /* Ensure the sidebar stays on top of other content */
     padding: 20px;
+    
   }
   
   
@@ -41,6 +42,7 @@
   
   .sidebar ul li {
     padding: 10px;
+    font-family: Inter,sans-serif;
   }
   
   

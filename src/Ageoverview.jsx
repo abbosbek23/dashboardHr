@@ -18,7 +18,7 @@ const Ageoverview = () => {
             padding: "0px 24px 8px 24px",
             borderRadius: "20px",
             background: "#F7F9FB",
-            margin: "30px",
+            margin: "0px",
           }}
         >
           <EmployeeAgeDistribution />
@@ -30,7 +30,7 @@ const Ageoverview = () => {
             padding: "0px 24px 8px 24px",
             borderRadius: "20px",
             background: "#F7F9FB",
-            margin: "30px",
+            margin: "20px 0 0 0 ",
           }}>
           <Typography sx={{textAlign:"center",fontWeight:600,paddingTop:"10px"}}>Employee Nation</Typography>
           <BarChart/>
@@ -43,7 +43,7 @@ const Ageoverview = () => {
             padding: "0px 24px 8px 24px",
             borderRadius: "20px",
             background: "#F7F9FB",
-            margin: "30px",
+            margin: "0px",
             height:"425px"
           }}
         >
@@ -55,7 +55,7 @@ const Ageoverview = () => {
             padding: "0px 24px 8px 24px",
             borderRadius: "20px",
             background: "#F7F9FB",
-            margin: "30px",
+            margin: "20px 0 0 0",
             height:"440px"
           }}
         >

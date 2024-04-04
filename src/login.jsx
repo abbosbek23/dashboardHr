@@ -36,6 +36,7 @@ const Login = () => {
       if (data) {
         localStorage.setItem('access', data.access);
         navigate('/departmentoverview');
+        location.reload()
       }
     } catch (error) {
       console.error('Error logging in:', error);

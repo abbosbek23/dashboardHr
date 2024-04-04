@@ -22,7 +22,7 @@ const Departmentoverview = () => {
         </Box>
         </Box>
        </Box>
-        <Box sx={{width:"97%",height:"350px",borderRadius:"20px",backgroundColor:"#F7F9FB",marginTop:"10px",marginRight:"0px",marginLeft:"20px",marginBottom:"20px"}}>
+        <Box sx={{width:"97%",height:"400px",borderRadius:"20px",backgroundColor:"#F7F9FB",marginTop:"10px",marginRight:"0px",marginLeft:"20px",marginBottom:"20px"}}>
           <Typography sx={{textAlign:"center",fontSize:"20px",fontWeight:"600",paddingTop:"15px",marginBottom:"10px"}}>Employee distribution by dismissal</Typography>
          <Distrubutionbyreasons/> 
         </Box> 

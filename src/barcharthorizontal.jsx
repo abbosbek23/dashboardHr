@@ -30,7 +30,7 @@ const BarchartHorizontal = () => {
 
   return (
     <div>
-      <div style={{ display: 'flex',marginLeft:"100px",marginTop:"10px",  marginBottom: '10px' }}>
+      <div style={{ display: 'flex',marginLeft:"0px",marginTop:"10px",  marginBottom: '10px',justifyContent:"center"}}>
         <button onClick={() => handleGenderChange('default')} style={buttonStyle}>All Statistics</button>
         <button onClick={() => handleGenderChange('male')} style={buttonStyle}>Male</button>
         <button onClick={() => handleGenderChange('female')} style={buttonStyle}>Female</button>

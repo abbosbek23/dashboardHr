@@ -3,25 +3,16 @@ import Sidebar from './sidebar';
 import Routes from './routes';
 
 function App() {
+  const pathname = window.location.pathname;
+  const isHomePage = pathname === "/" ;
+
   return (
-    <>
-    {
-      window.location.href === "http://localhost:5173/" && window.location.href === "https://xbuz.netlify.app/" ? ( <div className="content">
-      <Routes/>
-    </div>):(<div className="app">
+    <div className="app">
       <Sidebar />
-      <div className="content">
+      <div className="content" style={{ paddingLeft: !isHomePage ? "250px" : "0px" }}>
         <Routes />
       </div>
-    </div>)
-    }
-    {/* <div className="app">
-      <Sidebar />
-      <div className="content">
-        <Routes />
-      </div>
-    </div> */}
-    </>
+    </div>
   );
 }
 

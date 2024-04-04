@@ -29,7 +29,7 @@ const Agerangebyposition = () => {
   };
 
   return (
-    <div style={{ margin: '20px auto', width: '350px', height: '300px',marginLeft:"0px",paddingTop:"10px"}}>
+    <div style={{ margin: '0px auto', width: '350px', height: '300px',marginLeft:"0px",paddingTop:"10px"}}>
       <h2 style={{ textAlign: 'center',fontSize:"18px",fontFamily:"Inter,sans-serif"}}>Employee age distribution by position </h2>
       <BarChart
         layout="vertical"
