@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {useEffect,useState} from 'react'
 import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
@@ -7,7 +8,7 @@ import dismissedicon from "../src/assets/dismissedicon.svg"
 import averageicon from "../src/assets/averageageicon.svg"
 
 
-const Navbarstatistics = () => {
+const Navbarstatistics = ({namepage}) => {
 
     const [staffnumber,setStaffNumber] = useState({})
 
@@ -31,8 +32,12 @@ const Navbarstatistics = () => {
     <div>
         <Box sx={{padding:"30px 10px",display:"flex",backgroundColor:"#EFF3FD"}}>
         <Box sx={{width:"100%",height:"140px", borderRadius: "20px", background: "#c8dce8",marginRight:"10px",marginLeft:"0px"}}>
-                <Box sx={{ display: "flex" }}>
-                  <img
+                <Box sx={{marginTop:"20px"}}>
+                 <span style={{width:"50px",height:"50px",borderRadius:"50%",backgroundColor:"red",display:"block"}}></span>
+                 <Typography style={{fontSize:"25px",textAlign:"center",width:"100%",paddingLeft:"40px",paddingRight:"40px",lineHeight:"25px"}}>
+                  {namepage}
+                 </Typography>
+                  {/* <img
                     src={firstIcon}
                     width={54}
                     height={54}
@@ -72,7 +77,7 @@ const Navbarstatistics = () => {
                     >
                       {staffnumber.staff_count}
                     </Typography>
-                  </Box>
+                  </Box> */}
                 </Box>
               </Box>
               

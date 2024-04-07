@@ -98,7 +98,7 @@ const EmployeeAgeDistribution = () => {
         <button onClick={() => handleGenderChange('woman')} style={buttonStyle}>Woman</button>
       </div>
       <div style={{ height: "330px", width: "100%", marginLeft: "0px", marginRight: "0px" }}>
-        {chartData && <Bar height={0} width={400} data={chartData} options={options} />}
+        {chartData && <Bar height={0} style={{width:"100%"}} width={500} data={chartData} options={options} />}
       </div>
     </div>
   );

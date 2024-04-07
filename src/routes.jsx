@@ -6,6 +6,7 @@ import Genderoverview from './genderoverview';
 import Departmentoverview from './Departmentoverview';
 import Ageoverview from './Ageoverview';
 import Employeetable from './Employeetable';
+import Others from './Others';
 
 
 function Routes() {
@@ -27,7 +28,7 @@ function Routes() {
        <Route path='ageoverview' element={<Ageoverview/>}/>
        <Route path='/dashboard/employeetable' element={<Employeetable/>}/>
        <Route path='/employeetable' element={<Employeetable/>}/>
-       
+       <Route path='/others' element={<Others/>}/>
      </Switch>
   )
 }

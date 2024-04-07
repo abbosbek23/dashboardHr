@@ -1,36 +1,36 @@
 import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
-import BarchartHorizontal from './barcharthorizontal';
-import LanguageChart from './barcharts';
+
 import Navbarstatistics from './navbarstatistics';
+import TotalTerminationYearandMonth from './TotalTerminationYear';
+import TotalTerminationbyMonth from './TotalTerminationbyMonth';
+import TotalTerminationbyReasons from './TotalTerminationbyReasons';
 
 const EduLang = () => {
   return (
     <>
-    <Navbarstatistics/>
-    <div style={{height:"100vh",display:"flex",paddingTop:"10px",marginLeft:"0px"}}>
-        <Box sx={{width:"47%",height:"460px",padding:" 8px 14px 37px 0px",borderRadius: "20px",backgroundColor:"#F7F9FB",marginRight:"10px",marginLeft:"20px",alignItems:"center"}}>
-                <Typography sx={{color:"#1C1F21",
-                fontfamily: "Poppins,sans-serif",
-                fontSize: "18px",
-                fontStyle: "normal",
-                fontWeight: 700,
-                lineHeight: "24px",
-                letterSpacing: "-0.48px",textAlign:"center"}}>Education level distribution</Typography>
-                <BarchartHorizontal/> 
-        </Box>
-        <Box className={"barvertical"} sx={{width:"45%",height:"460px",padding:" 10px 0px 37px 10px",borderRadius: "20px",backgroundColor:"#F7F9FB",alignItems:"center"}}>
-                <Typography sx={{color:"#1C1F21",
-                fontfamily: "Poppins,sans-serif",
-                fontSize: "16px",
-                fontStyle: "normal",
-                fontWeight: 700,
-                lineHeight: "15px",
-                letterSpacing: "-0.48px",textAlign:"center",marginTop:"0px"}}>
-                Language proficiency
-                </Typography>
-                <LanguageChart/>
-              </Box>
+    <Navbarstatistics namepage={"Termination overview"}/>
+    <div style={{display:"flex"}}>
+      <Box sx={{width:"100%",display:"flex"}}>
+        <Box width={"33%"}>
+        <Typography sx={{textAlign:"center",fontSize:"20px",fontWeight:"700"}}>
+          Total Termination By Year and Month
+        </Typography>
+      <TotalTerminationYearandMonth/> 
+      </Box>
+      <Box width={"33%"}>
+      <Typography sx={{textAlign:"center",fontSize:"20px",fontWeight:"700",marginBottom:"40px"}}>
+          Total Termination by Month (whole period)
+        </Typography>
+        <TotalTerminationbyMonth/>
+      </Box>
+      <Box width={"33%"}>
+        <Typography sx={{textAlign:"center",fontSize:"20px",fontWeight:"700",marginBottom:"40px"}}>
+         Termination by Reasons
+        </Typography>
+        <TotalTerminationbyReasons/>
+      </Box>
+      </Box>
     </div>
     </>
   )

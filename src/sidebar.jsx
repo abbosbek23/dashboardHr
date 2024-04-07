@@ -1,35 +1,22 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import './Sidebar.css'; 
 import { Box } from '@mui/system';
 import imagelogo from "./assets/imagelogo.png"
 import line from "./assets/line.svg";
-import dashboardicon from "./assets/dashboardicon.svg"
+// import dashboardicon from "./assets/dashboardicon.svg"
 import { useNavigate } from 'react-router-dom';
 import { Typography } from '@mui/material';
 
 const Sidebar = () => {
-  const [isDashboardOpen, setIsDashboardOpen] = useState(false);
-  const [dashboardHeight, setDashboardHeight] = useState('0px');
-  const [isEmployeeOpen, setIsEmployeeOpen] = useState(false);
-  const [EmployeeHeight, setEmployeeHeight] = useState('0px');
+ 
   const [activeButton, setActiveButton] = useState(null); // State to track active button
   const [activesButton, setActivesButton] = useState(null); // State to track active button
   const dashboardRef = useRef(null);
   const EmployeeRef = useRef(null);
   const navigate = useNavigate()
 
-  useEffect(() => {
-    setDashboardHeight(isDashboardOpen ? `${dashboardRef.current.scrollHeight}px` : '0px');
-    setEmployeeHeight(isEmployeeOpen ? `${EmployeeRef.current.scrollHeight}px` : '0px');
 
-  }, [isDashboardOpen,isEmployeeOpen]);
 
-  const handleDashboardClick = () => {
-    setIsDashboardOpen(!isDashboardOpen);
-  };
-  const handleEmployeeClick = () => {
-    setIsEmployeeOpen(!isEmployeeOpen)
-  } 
 
   const handleButtonClicks =(buttonNames) => {
     setActivesButton(buttonNames)
@@ -54,24 +41,23 @@ const Sidebar = () => {
           </Box>
           <img src={line} width={"100%"} alt="line" />
           <Box>
-            <Typography onClick={handleDashboardClick} sx={{width:"80%",marginTop:"20px",padding:"10px",borderRadius:"10px",color:isDashboardOpen ?"white":"#00DEA3",display:"flex",alignItems:"center",transition:"0.2s linear",backgroundColor:isDashboardOpen ? "#00DEA3":"white",cursor:"pointer"}}>
-              <img style={{marginLeft:"10px",marginRight:"15px", backgroundColor: activeButton === 'dashboard' ? "#00DEA3" : "white"}} src={dashboardicon} width={20} height={20} onClick={() => handleButtonClick('dashboard')}/> Dashboard
+            <Typography  sx={{width:"80%",fontWeight:"600",marginTop:"20px",padding:"10px",color:"#000",display:"flex",alignItems:"center",fontSize:"16px"}}>
+               Navigation Panel
             </Typography>
-            <ul ref={dashboardRef} style={{height: dashboardHeight, overflow: 'hidden',marginTop:"10px", transition: 'height 0.5s'}}>
-              <li onClick={() => {navigate('departmentoverview'); handleButtonClick('departmentoverview')}} style={{backgroundColor: activeButton === 'departmentoverview' ? "#00DEA3" : "white",color:activeButton === 'departmentoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Department Overview</li>
-              <li onClick={() => {navigate('interdepartment'); handleButtonClick('interdepartment')}} style={{backgroundColor: activeButton === 'interdepartment' ? "#00DEA3" : "white",color:activeButton === 'interdepartment' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Interdeparment Overview</li>
-              <li onClick={() => {navigate('ageoverview'); handleButtonClick('ageoverview')}} style={{backgroundColor: activeButton === 'ageoverview' ? "#00DEA3" : "white",color:activeButton === 'ageoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Age Overview</li>
-              <li onClick={() => {navigate('genderoverview'); handleButtonClick('genderoverview')}} style={{backgroundColor: activeButton === 'genderoverview' ? "#00DEA3" : "white",color:activeButton === 'genderoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Gender Overview</li>
-              <li onClick={() => {navigate('edulang'); handleButtonClick('edulang')}} style={{backgroundColor: activeButton === 'edulang' ? "#00DEA3" : "white",color:activeButton === 'edulang' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Education Overview</li>
+            <ul ref={dashboardRef} style={{ marginTop:"20px", transition: 'height 0.5s'}}>
+              <li onClick={() => {navigate('departmentoverview'); handleButtonClick('departmentoverview')}} style={{marginBlock:"10px",paddingBlock:"15px",backgroundColor: activeButton === 'departmentoverview' ? "#00DEA3" : "white",color:activeButton === 'departmentoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Department Overview</li>
+              <li onClick={() => {navigate('interdepartment'); handleButtonClick('interdepartment')}} style={{marginBlock:"10px",paddingBlock:"15px",backgroundColor: activeButton === 'interdepartment' ? "#00DEA3" : "white",color:activeButton === 'interdepartment' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Experience Overview</li>
+              <li onClick={() => {navigate('ageoverview'); handleButtonClick('ageoverview')}} style={{marginBlock:"10px",paddingBlock:"15px",backgroundColor: activeButton === 'ageoverview' ? "#00DEA3" : "white",color:activeButton === 'ageoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Age Overview</li>
+              <li onClick={() => {navigate('genderoverview'); handleButtonClick('genderoverview')}} style={{marginBlock:"10px",paddingBlock:"15px",backgroundColor: activeButton === 'genderoverview' ? "#00DEA3" : "white",color:activeButton === 'genderoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Gender Overview</li>
+              <li onClick={() => {navigate('edulang'); handleButtonClick('edulang')}} style={{marginBlock:"10px",paddingBlock:"15px", backgroundColor: activeButton === 'edulang' ? "#00DEA3" : "white",color:activeButton === 'edulang' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Termination Overview</li>
               {/* <li onClick={() => {navigate('nationoverview'); handleButtonClick('nationoverview')}} style={{backgroundColor: activeButton === 'nationoverview' ? "#00DEA3" : "white",color:activeButton === 'nationoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Nation Overview</li> */}
             </ul>
           </Box>
           <Box>
-            <Typography onClick={handleEmployeeClick} sx={{width:"80%",marginTop:"20px",padding:"10px",borderRadius:"10px",color:isEmployeeOpen ?"white":"#00DEA3",display:"flex",alignItems:"center",transition:"0.2s linear",backgroundColor:isEmployeeOpen ? "#00DEA3":"white",cursor:"pointer"}}>
-              <img style={{marginLeft:"10px",marginRight:"15px", backgroundColor: activesButton === 'dashboard' ? "#00DEA3" : "white"}} src={dashboardicon} width={20} height={20} onClick={() => handleButtonClick('dashboard')}/> Employee
-            </Typography>
-            <ul ref={EmployeeRef} style={{height: EmployeeHeight, overflow: 'hidden',marginTop:"10px", transition: 'height 0.5s'}}>
-              <li onClick={() => {navigate('employeetable'); handleButtonClicks('employeetable')}} style={{backgroundColor: activesButton === 'employeetable' ? "#00DEA3" : "white",color:activesButton === 'employeetable' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Employee Overview</li>
+            
+            <ul ref={EmployeeRef} style={{marginTop:"10px", transition: 'height 0.5s'}}>
+              <li onClick={() => {navigate('employeetable'); handleButtonClicks('employeetable')}} style={{marginBlock:"10px",paddingBlock:"15px",backgroundColor: activesButton === 'employeetable' ? "#00DEA3" : "white",color:activesButton === 'employeetable' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Employee Overview</li>
+              <li onClick={() => {navigate('others'); handleButtonClicks('others')}} style={{marginBlock:"10px",paddingBlock:"15px" ,backgroundColor: activesButton === 'others' ? "#00DEA3" : "white",color:activesButton === 'others' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Others</li>
             </ul>
           </Box>
         </div>)

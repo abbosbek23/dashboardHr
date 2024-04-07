@@ -21,18 +21,20 @@ const EmployeeDepartment = () => {
   const processData = () => {
     const departmentMap = {};
 
-    data.forEach(({ Department, StaffCount }) => {
-      const department = Department.length > 20 ? Department.slice(0, 20) + '...' : Department;
-      if (StaffCount <= 6) {
-        departmentMap['Additional Departments'] = (departmentMap['Additional Departments'] || 0) + StaffCount;
-      } else {
-        departmentMap[department] = (departmentMap[department] || 0) + StaffCount;
+    data.forEach(({ Departament, StaffCount }) => {
+      if (Departament) { // Check if Departament is defined
+        const department = Departament.length > 20 ? Departament.slice(0, 20) + '...' : Departament;
+        if (StaffCount <= 6) {
+          departmentMap['Additional Departments'] = (departmentMap['Additional Departments'] || 0) + StaffCount;
+        } else {
+          departmentMap[department] = (departmentMap[department] || 0) + StaffCount;
+        }
       }
     });
 
     const sortedData = Object.entries(departmentMap).sort((a, b) => b[1] - a[1]);
     const labels = sortedData.map(([department]) => department);
-    const values = sortedData.map(([ , staffCount]) => staffCount);
+    const values = sortedData.map(([, staffCount]) => staffCount);
 
     return { labels, values };
   };
@@ -40,7 +42,7 @@ const EmployeeDepartment = () => {
   const chartData = {
     datasets: [
       {
-        label:"employee counts",
+        label: "Employee Counts",
         axis: 'y',
         backgroundColor: 'rgba(54, 162, 235, 0.6)',
         borderColor: 'rgba(54, 162, 235, 1)',
@@ -60,11 +62,12 @@ const EmployeeDepartment = () => {
   }
 
   return (
-    <div style={{ width:"400px", height:"350px",marginLeft:"20px" }}>
-      
-       <Bar
+    <div style={{ width: "100%", height: "550px", marginLeft: "0px", marginRight: "0px" }}>
+
+      <Bar
         data={chartData}
-        width={450}
+        // width={550}
+        style={{width:"100%"}}
         height={200}
         options={{
           indexAxis: 'y',
@@ -79,9 +82,11 @@ const EmployeeDepartment = () => {
               },
             ],
           },
-          legend: {
-            display: false, // Remove legend
-          },
+          plugins: {
+            legend: {
+                display: false
+            },
+        },
           tooltips: {
             callbacks: {
               label: (tooltipItem) => `Staff Count: ${tooltipItem.yLabel}`,

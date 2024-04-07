@@ -3,13 +3,13 @@ import EmployeeAgeDistribution from "./barchart";
 import { Box } from "@mui/system";
 import Navbarstatistics from "./navbarstatistics";
 import Agerangebyposition from "./Agerangebyposition";
-import { Typography } from '@mui/material';
-import BarChart from "./demobarchart";
-import Transfer from "./Transfer";
+// import { Typography } from '@mui/material';
+
+
 const Ageoverview = () => {
   return (
     <div>
-        <Navbarstatistics/>
+        <Navbarstatistics namepage={"Age overview"}/>
       <div style={{display:"flex"}}>
         <Box sx={{width:"47%"}}>
         <Box
@@ -25,16 +25,7 @@ const Ageoverview = () => {
           
           
         </Box>
-        <Box sx={{
-            width: "100%",
-            padding: "0px 24px 8px 24px",
-            borderRadius: "20px",
-            background: "#F7F9FB",
-            margin: "20px 0 0 0 ",
-          }}>
-          <Typography sx={{textAlign:"center",fontWeight:600,paddingTop:"10px"}}>Employee Nation</Typography>
-          <BarChart/>
-          </Box>
+
         </Box>
         <Box sx={{width:"47%"}}>
         <Box
@@ -49,18 +40,7 @@ const Ageoverview = () => {
         >
           <Agerangebyposition/>
         </Box>
-        <Box 
-        sx={{
-            width: "95%",
-            padding: "0px 24px 8px 24px",
-            borderRadius: "20px",
-            background: "#F7F9FB",
-            margin: "20px 0 0 0",
-            height:"440px"
-          }}
-        >
-            <Transfer/>
-        </Box>
+        
         </Box>
       </div>
     </div>
