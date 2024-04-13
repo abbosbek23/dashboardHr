@@ -5,7 +5,8 @@ import { Typography } from '@mui/material';
 import axios from 'axios';
 // import firstIcon from "../src/assets/firsticon.png"
 // import dismissedicon from "../src/assets/dismissedicon.svg"
-import averageicon from "../src/assets/averageageicon.svg"
+// import averageicon from "../src/assets/averageageicon.svg"
+import totalemployeeicon from "../src/assets/totalemployeeicon.png"
 import maleicon from "./assets/mangenderoverview.png"
 import femaleicon from "./assets/femalegenderoverview.png"
 import { useState, useEffect } from 'react';
@@ -55,8 +56,8 @@ const NavbargenderOverview = ({namepage}) => {
       <Box sx={{padding:"30px 10px",display:"flex",backgroundColor:"#EFF3FD"}}>
         <Box sx={{width:"100%",height:"140px", borderRadius: "20px", background: "#c8dce8",marginRight:"10px",marginLeft:"0px"}}>
         <Box sx={{marginTop:"20px"}}>
-                 <span style={{width:"30px",height:"30px",borderRadius:"50%",backgroundColor:"red",display:"block",marginBottom:"10px"}}></span>
-                 <Typography style={{fontSize:"25px",textAlign:"center",width:"100%",paddingLeft:"40px",paddingRight:"40px",lineHeight:"25px"}}>
+                 {/* <span style={{width:"30px",height:"30px",borderRadius:"50%",backgroundColor:"red",display:"block",marginBottom:"10px"}}></span> */}
+                 <Typography style={{marginTop:"55px",fontSize:"25px",textAlign:"center",width:"100%",paddingLeft:"40px",paddingRight:"40px",lineHeight:"25px"}}>
                   {namepage}
                  </Typography>
                  </Box>
@@ -64,10 +65,10 @@ const NavbargenderOverview = ({namepage}) => {
               <Box sx={{width:"100%", borderRadius: "20px", background: "#BAEDBD"}}>
                 <Box sx={{ display: "flex",paddingTop:"0px" }}>
                   <img
-                    src={averageicon}
-                    width={54}
+                    src={totalemployeeicon}
+                    width={52}
                     height={54}
-                    style={{marginRight:"10px",marginTop:"20px"}}
+                    style={{marginRight:"10px",marginTop:"35px",padding:"10px",backgroundColor:"white",borderRadius:"50%"}}
                     alt="icons"
                   />
                     <Box sx={{marginLeft:"10px",textAlign:"center"}}>

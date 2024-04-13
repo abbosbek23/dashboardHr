@@ -8,7 +8,7 @@ const Interdepartmentoverview = () => {
   return (
     <>
     {/* <Navbarstatistics namepage={"Experience"}/> */}
-    <NavbargenderOverview namepage={"Experience"}/>
+    <NavbargenderOverview namepage={"Experience overview"}/>
     <div style={{display:"flex"}}>
     <Box sx={{width:"45%",height:"600px",borderRadius:"20px",backgroundColor:"#F7F9FB",marginRight:"0px",marginLeft:"15px"}}>
     <Typography sx={{color:"#1C1F21",
