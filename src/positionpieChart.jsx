@@ -63,7 +63,7 @@ const RechartHorizontalBarChart = () => {
 const buttonStyle = {
   padding: '8px 16px',
   borderRadius: '5px',
-  border: 'none',
+  border: '1px solid B5B5B5',
   marginRight: '10px',
   backgroundColor: '#FFF',
   color: '#000',

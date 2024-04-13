@@ -107,7 +107,7 @@ const EmployeeAgeDistribution = () => {
 const buttonStyle = {
   padding: '8px 16px',
   borderRadius: '5px',
-  border: 'none',
+  border: "1px solid #B5B5B5",
   marginRight: '10px',
   marginLeft: '10px',
   backgroundColor: '#fff',
