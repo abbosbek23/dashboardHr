@@ -54,7 +54,7 @@ const GenderPieChart = () => {
     <div style={{ width: '280px', height: '450px', marginTop: "30px" }}>
       <Doughnut
         data={{
-          labels: ['Man', 'Woman'],
+          labels: ['Male', 'Female'],
           datasets: [
             {
               data: [genderData.male.count, genderData.female.count],
@@ -77,7 +77,7 @@ const GenderPieChart = () => {
             fontWeight: 400,
             lineHeight: "normal",
             marginRight:"5px"
-          }}>Man</Typography>
+          }}>Male</Typography>
           <Typography>{roundedGenderPercentages['male'] ? `${roundedGenderPercentages['male']}%` : ''}</Typography>
         </Box>
         <Box display={"flex"} sx={{ alignItems: "center" }}>
@@ -90,7 +90,7 @@ const GenderPieChart = () => {
             fontWeight: 400,
             lineHeight: "normal",
             marginRight:"5px"
-          }}>Woman</Typography>
+          }}>Female</Typography>
           <Typography>{roundedGenderPercentages['female'] ? `${roundedGenderPercentages['female']}%` : ''}</Typography>
         </Box>
       </Box>

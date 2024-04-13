@@ -45,7 +45,7 @@ const BarchartHorizontal = () => {
           margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
         >
           <XAxis type="number" />
-          <YAxis dataKey="name" type="category" />
+          <YAxis dataKey="name" type="category" hide={true} />
           <Tooltip formatter={(value) => `${value}`} />
           
           <Bar dataKey="count" name="Count" fill="#8884d8" barSize={35} radius={[0, 5, 5, 0]} animationDuration={1000} />
@@ -59,7 +59,7 @@ const BarchartHorizontal = () => {
 const buttonStyle = {
   padding: '8px 16px',
   borderRadius: '5px',
-  border: 'none',
+  border: '1px solid #B5B5B5',
   marginRight: '10px',
   marginLeft:"5px",
   backgroundColor: '#fff',
