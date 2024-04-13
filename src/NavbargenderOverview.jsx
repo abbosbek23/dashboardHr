@@ -126,9 +126,6 @@ const NavbargenderOverview = ({namepage}) => {
                       Males
                     </Typography>
                     <Typography sx={{fontSize:"15px",width:170}}>Percentage and number</Typography>
-                    <Typography sx={{fontSize:"20px",marginBottom:"0px",marginTop:"3px"}}>
-                    {malepercent}%
-                    </Typography>
                     <Typography
                       sx={{
                         color: "#1C1F21",
@@ -138,11 +135,14 @@ const NavbargenderOverview = ({namepage}) => {
                         fontWeight: 700,
                         lineHeight: "24px",
                         letterSpacing: "-0.48px",
-                        padding:"0px 20px 20px 20px"
+                        padding:"10px 20px 0px 20px"
                       }}
                     >
                      {maleCount}
                     </Typography>
+                        <Typography sx={{fontSize:"20px",marginBottom:"0px",marginTop:"3px"}}>
+                        {malepercent}%
+                        </Typography>
                   </Box>
                 </Box>
               </Box>
@@ -173,9 +173,6 @@ const NavbargenderOverview = ({namepage}) => {
                       Female
                     </Typography>
                     <Typography sx={{fontSize:"15px",width:170}}>Percentage and number</Typography>
-                    <Typography sx={{fontSize:"20px",marginBottom:"0px",marginTop:"5px"}}>
-                      {femalepercent}%
-                    </Typography>
                     <Typography
                       sx={{
                         color: "#1C1F21",
@@ -185,11 +182,14 @@ const NavbargenderOverview = ({namepage}) => {
                         fontWeight: 700,
                         lineHeight: "24px",
                         letterSpacing: "-0.48px",
-                        padding:"0px 20px 20px 20px"
+                        padding:"10px 20px 0px 20px"
                       }}
                     >
                       {femaleCount}
                     </Typography>
+                        <Typography sx={{fontSize:"20px",marginBottom:"0px",marginTop:"5px"}}>
+                          {femalepercent}%
+                        </Typography>
                   </Box>
                 </Box>
               </Box>

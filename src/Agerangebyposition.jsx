@@ -46,8 +46,8 @@ const Agerangebyposition = () => {
           formatter={(value, name, props) => [`${value} - ${props.payload.max_age}`, props.payload.position]} 
           labelFormatter={() => ""} // Remove index label
         />
-        <Legend width={600}/>
-        <Bar dataKey="min_age" stackId="a" radius={5} fill="#8884d8" />
+        <Legend verticalAlign="bottom" width={600}  />
+        <Bar dataKey="min_age" barSize={28} stackId="a" radius={5} fill="#8884d8" />
         <Bar dataKey="max_age" stackId="a" radius={5} fill="#82ca9d" />
       </BarChart>
     </div>
