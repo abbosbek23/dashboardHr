@@ -1,60 +1,56 @@
-import { useEffect, useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from 'axios';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { useEffect, useState } from 'react';
+import { BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
 
-const RechartHorizontalBarChart = () => {
-  const [positionData, setPositionData] = useState(null);
+const BarchartHorizontal = () => {
+  const [positions, setPositions] = useState({});
+  const [selectedGender, setSelectedGender] = useState('default');
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { data } = await axios.get("https://dev.ikramovna.me/api/v1/position");
-        setPositionData(data); // Set default data initially
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+    const fetchPositionData = async () => {
+      const url = selectedGender === 'default'
+        ? "https://dev.ikramovna.me/api/v1/position"
+        : `https://dev.ikramovna.me/api/v1/position?gender=${selectedGender}`;
+
+      const response = await axios.get(url);
+      setPositions(response.data[selectedGender]);
     };
-    fetchData();
-  }, []);
 
-  const handleDataChange = (gender) => {
-    if (positionData && gender in positionData) {
-      setPositionData(positionData[gender]); // Set the selected gender data
-    }
+    fetchPositionData();
+  }, [selectedGender]);
+
+  const handleGenderChange = (gender) => {
+    setSelectedGender(gender);
   };
 
-  const transformData = (data) => {
-    return Object.entries(data).map(([position, { count, percent }]) => ({
-      position,
-      count,
-      percent
-    }));
-  };
+  const chartData = positions
+    ? Object.entries(positions).map(([position, data]) => ({ name: position, count: data.count, percent: data.percent }))
+    : [];
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <div style={{ display: 'flex', marginBottom: '10px' }}>
-        <button onClick={() => handleDataChange('default')} style={buttonStyle}>All Statistics</button>
-        <button onClick={() => handleDataChange('male')} style={buttonStyle}>Male</button>
+    <div>
+      <div style={{  width:"100%", textAlign:"center", marginTop: '10px' }}>
+        <button onClick={() => handleGenderChange('default')} style={buttonStyle}>All Statistics</button>
+        <button onClick={() => handleGenderChange('male')} style={buttonStyle}>Male</button>
+        <button onClick={() => handleGenderChange('female')} style={buttonStyle}>Female</button>
       </div>
-      <div style={{ height: "100%", width: "100%" }}>
-        {positionData && (
-          <BarChart
-            layout="vertical"
-            width={700}
-            height={500}
-            data={transformData(positionData)}
-            margin={{ top: 20, right: 30, left: 40, bottom: 5 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis type="number" />
-            <YAxis dataKey="position" type="category" />
-            <Tooltip />
-            <Legend />
-            <Bar dataKey="count" fill="#8884d8" name="Count" />
-            <Bar dataKey="percent" fill="#82ca9d" name="Percentage" />
-          </BarChart>
-        )}
+      <div style={{ width: "100%", height: "100%" }}>
+        <BarChart
+          width={700}
+          style={{width:"100%"}}
+          height={500}
+          data={chartData}
+          layout="vertical"
+          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+        >
+          <XAxis type="number" />
+          <YAxis dataKey="name" type="category" />
+          <Tooltip formatter={(value) => `${value}`} />
+          
+          <Bar dataKey="count" name="Count" fill="#8884d8" barSize={35} radius={[0, 5, 5, 0]} animationDuration={1000} />
+          <Bar dataKey="percent" name="Percentage" fill="#82ca9d" barSize={35} radius={[0, 5, 5, 0]} animationDuration={1000} />
+        </BarChart>
       </div>
     </div>
   );
@@ -63,11 +59,12 @@ const RechartHorizontalBarChart = () => {
 const buttonStyle = {
   padding: '8px 16px',
   borderRadius: '5px',
-  border: '1px solid B5B5B5',
+  border: 'none',
   marginRight: '10px',
-  backgroundColor: '#FFF',
+  marginLeft:"5px",
+  backgroundColor: '#fff',
   color: '#000',
   cursor: 'pointer',
 };
 
-export default RechartHorizontalBarChart;
+export default BarchartHorizontal;
