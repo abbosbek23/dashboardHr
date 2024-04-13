@@ -21,6 +21,7 @@ const Ageoverview = () => {
             borderRadius: "20px",
             background: "#F7F9FB",
             margin: "0px",
+            height:"600px"
           }}
         >
           <EmployeeAgeDistribution />
@@ -37,7 +38,7 @@ const Ageoverview = () => {
             borderRadius: "20px",
             background: "#F7F9FB",
             margin: "0px",
-            height:"425px"
+            height:"600px"
           }}
         >
           <Agerangebyposition/>

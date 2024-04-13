@@ -17,7 +17,7 @@ const Interdepartmentoverview = () => {
                  fontStyle: "normal",
                  fontWeight: 700,
                  lineHeight: "30px",
-                 letterSpacing: "-0.36px",marginTop:"14px",marginLeft:"14px",textAlign:"center",marginBottom:"0px"}}>
+                 letterSpacing: "-0.36px",marginTop:"14px",marginLeft:"14px",textAlign:"center",marginBottom:"10px"}}>
      Years with bank
     </Typography>  
     <EmployeeExperienceBarChart/>

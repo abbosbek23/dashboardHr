@@ -55,6 +55,7 @@ const MalesPieChart = () => {
     tooltips: {
       callbacks: {
         label: function(tooltipItem, data) {
+          console.log(data);
           const datasetLabel = data.datasets[tooltipItem.datasetIndex].label;
           const dataLabel = data.labels[tooltipItem.index];
           const value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
@@ -64,7 +65,7 @@ const MalesPieChart = () => {
       },
     },
   };
-
+  console.log(ageData);
   return (
     <div style={{ width: '280px', height: '450px', marginTop: "30px" }}>
       <Doughnut
@@ -83,26 +84,27 @@ const MalesPieChart = () => {
         options={options}
         type="pie" // Pie tipini qo'shing
       />
-      <Box sx={{ display: "flex", marginTop: "30px",width:"90%",flexWrap:"wrap"}}>
-        {Object.entries(ageData).map(([label], index) => (
-          <Box key={index} display={"flex"} sx={{ alignItems: "center" }}>
-            <div style={{ width:'5px', height: '5px',borderRadius:"50%", marginRight: "5px", marginLeft: index % 2 === 0 ? "0px" : "10px", backgroundColor: backgroundColor[index % backgroundColor.length] }} />
-            
-            <Box sx={{alignItems:"center"}}><Typography sx={{
-              width:"80px",  
-              color: "#1C1F21",
-              fontFamily: "Poppins,sans-serif",
-              fontSize: "18px",
-              fontStyle: "normal",
-              fontWeight: 400,
-              lineHeight: "normal",
-              marginRight: "10px",
-              whiteSpace:"no-wrap"
-            }}>{label}</Typography>
-            {/* <Typography>{count}</Typography> */}
-            </Box>
-          </Box>
-        ))}
+      <Box sx={{ display: "flex", marginTop: "30px",width:"100%",flexWrap:"wrap",marginLeft:"0px",marginRight:"0px"}}>
+      {Object.entries(ageData).map(([label, count], index) => (
+  <Box key={index} display={"flex"} sx={{ alignItems: "center" ,}}>
+    <div style={{ width:'10px', height: '10px',borderRadius:"50%", marginRight: "5px", marginLeft: index % 2 === 0 ? "0px" : "10px", backgroundColor: backgroundColor[index % backgroundColor.length] }} />
+    
+    <Box sx={{alignItems:"center"}}>
+      <Typography sx={{
+        width:"80px",  
+        color: "#1C1F21",
+        fontFamily: "Poppins,sans-serif",
+        fontSize: "16px",
+        fontStyle: "normal",
+        fontWeight: 400,
+        lineHeight: "normal",
+        marginRight: "10px",
+        whiteSpace:"no-wrap"
+      }}>{label}</Typography>
+      <Typography>{count} ({Math.round((count / Object.values(ageData).reduce((a, b) => a + b)) * 100)}%)</Typography>
+    </Box>
+  </Box>
+))}
       </Box>
     </div>
   );

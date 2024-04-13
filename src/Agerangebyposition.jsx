@@ -35,7 +35,7 @@ const Agerangebyposition = () => {
         layout="vertical"
         width={570}
         style={{width:"100%"}}
-        height={370}
+        height={550}
         data={processData()}
         margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
       >
@@ -46,7 +46,7 @@ const Agerangebyposition = () => {
           formatter={(value, name, props) => [`${value} - ${props.payload.max_age}`, props.payload.position]} 
           labelFormatter={() => ""} // Remove index label
         />
-        <Legend />
+        <Legend width={600}/>
         <Bar dataKey="min_age" stackId="a" radius={5} fill="#8884d8" />
         <Bar dataKey="max_age" stackId="a" radius={5} fill="#82ca9d" />
       </BarChart>

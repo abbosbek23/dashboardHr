@@ -68,7 +68,7 @@ const GenderPieChart = () => {
         options={options} />
       <Box sx={{ display: "flex", marginTop: "30px" }}>
         <Box display={"flex"} sx={{ alignItems: "center" }}>
-          <img src={dot} width={6} height={6} style={{ marginRight: "10px", marginLeft: "0px" }} alt="ellipse" />
+          <img src={dot} width={13} height={13} style={{ marginRight: "10px", marginLeft: "0px" }} alt="ellipse" />
           <Typography sx={{
             color: "#1C1F21",
             fontFamily: "Poppins,sans-serif",
@@ -81,7 +81,7 @@ const GenderPieChart = () => {
           <Typography>{roundedGenderPercentages['male'] ? `${roundedGenderPercentages['male']}%` : ''}</Typography>
         </Box>
         <Box display={"flex"} sx={{ alignItems: "center" }}>
-          <img src={dots} width={6} height={6} style={{ marginRight: "10px", marginLeft: "10px" }} alt="ellipse" />
+          <img src={dots} width={13} height={13} style={{ marginRight: "10px", marginLeft: "10px" }} alt="ellipse" />
           <Typography sx={{
             color: "#1C1F21",
             fontFamily: "Poppins,sans-serif",
