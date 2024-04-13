@@ -1,15 +1,17 @@
 import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
 
-import Navbarstatistics from './navbarstatistics';
+// import Navbarstatistics from './navbarstatistics';
 import TotalTerminationYearandMonth from './TotalTerminationYear';
 import TotalTerminationbyMonth from './TotalTerminationbyMonth';
 import TotalTerminationbyReasons from './TotalTerminationbyReasons';
+import NavbargenderOverview from './NavbargenderOverview';
 
 const EduLang = () => {
   return (
     <>
-    <Navbarstatistics namepage={"Termination overview"}/>
+    {/* <Navbarstatistics namepage={"Termination overview"}/> */}
+    <NavbargenderOverview namepage={"Termination overview"}/>
     <div style={{display:"flex"}}>
       <Box sx={{width:"100%",display:"flex"}}>
         <Box width={"33%"}>

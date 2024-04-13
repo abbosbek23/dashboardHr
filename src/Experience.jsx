@@ -56,7 +56,7 @@ const Experience = () => {
       <Navbarstatistics />
       <div style={{ width: '100%', height: 400 }}>
       <ResponsiveContainer>
-        <LineChart
+        <LineChart 
           data={processedData.flat()} // Flatten the array
           margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
         >

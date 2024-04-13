@@ -24,13 +24,14 @@ const EmployeeExperienceBarChart = () => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginLeft: "0px", marginRight: "0px", marginTop: "0px" }}>
-      <div style={{ height: "800px", width: "700px", marginTop: "15px", position: 'relative', marginLeft: "0px", marginRight: "0px" }}>
+      <div style={{ height: "100%", width: "100%", marginTop: "0px", position: 'relative', marginLeft: "0px", marginRight: "0px" }}>
         <BarChart
           layout="vertical"
           width={700}
+          style={{width:"100%"}}
           height={520}
           data={experienceData}
-          margin={{ top: 0, right: 30, left: 40, bottom: 5 }}
+          margin={{ top: 0, right: 20, left: 20, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis type="number" />

@@ -1,15 +1,17 @@
 // import React from 'react'
 import EmployeeAgeDistribution from "./barchart";
 import { Box } from "@mui/system";
-import Navbarstatistics from "./navbarstatistics";
+// import Navbarstatistics from "./navbarstatistics";
 import Agerangebyposition from "./Agerangebyposition";
+import NavbargenderOverview from "./NavbargenderOverview";
 // import { Typography } from '@mui/material';
 
 
 const Ageoverview = () => {
   return (
     <div>
-        <Navbarstatistics namepage={"Age overview"}/>
+        {/* <Navbarstatistics namepage={"Age overview"}/> */}
+        <NavbargenderOverview namepage={"Age overview"}/>
       <div style={{display:"flex"}}>
         <Box sx={{width:"47%"}}>
         <Box

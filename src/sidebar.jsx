@@ -10,17 +10,17 @@ import { Typography } from '@mui/material';
 const Sidebar = () => {
  
   const [activeButton, setActiveButton] = useState(null); // State to track active button
-  const [activesButton, setActivesButton] = useState(null); // State to track active button
+  // const [activesButton, setActivesButton] = useState(null); // State to track active button
   const dashboardRef = useRef(null);
-  const EmployeeRef = useRef(null);
+  // const EmployeeRef = useRef(null);
   const navigate = useNavigate()
 
 
 
 
-  const handleButtonClicks =(buttonNames) => {
-    setActivesButton(buttonNames)
-  }
+  // const handleButtonClicks =(buttonNames) => {
+  //   setActivesButton(buttonNames)
+  // }
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
@@ -50,15 +50,14 @@ const Sidebar = () => {
               <li onClick={() => {navigate('ageoverview'); handleButtonClick('ageoverview')}} style={{marginBlock:"10px",paddingBlock:"15px",backgroundColor: activeButton === 'ageoverview' ? "#00DEA3" : "white",color:activeButton === 'ageoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Age Overview</li>
               <li onClick={() => {navigate('genderoverview'); handleButtonClick('genderoverview')}} style={{marginBlock:"10px",paddingBlock:"15px",backgroundColor: activeButton === 'genderoverview' ? "#00DEA3" : "white",color:activeButton === 'genderoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Gender Overview</li>
               <li onClick={() => {navigate('edulang'); handleButtonClick('edulang')}} style={{marginBlock:"10px",paddingBlock:"15px", backgroundColor: activeButton === 'edulang' ? "#00DEA3" : "white",color:activeButton === 'edulang' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Termination Overview</li>
+              <li onClick={() => {navigate('employeetable'); handleButtonClick('employeetable')}} style={{marginBlock:"10px",paddingBlock:"15px",backgroundColor: activeButton === 'employeetable' ? "#00DEA3" : "white",color:activeButton === 'employeetable' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Employee Overview</li>
+              <li onClick={() => {navigate('others'); handleButtonClick('others')}} style={{marginBlock:"10px",paddingBlock:"15px" ,backgroundColor: activeButton === 'others' ? "#00DEA3" : "white",color:activeButton === 'others' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Others</li>
               {/* <li onClick={() => {navigate('nationoverview'); handleButtonClick('nationoverview')}} style={{backgroundColor: activeButton === 'nationoverview' ? "#00DEA3" : "white",color:activeButton === 'nationoverview' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Nation Overview</li> */}
             </ul>
           </Box>
           <Box>
             
-            <ul ref={EmployeeRef} style={{marginTop:"10px", transition: 'height 0.5s'}}>
-              <li onClick={() => {navigate('employeetable'); handleButtonClicks('employeetable')}} style={{marginBlock:"10px",paddingBlock:"15px",backgroundColor: activesButton === 'employeetable' ? "#00DEA3" : "white",color:activesButton === 'employeetable' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Employee Overview</li>
-              <li onClick={() => {navigate('others'); handleButtonClicks('others')}} style={{marginBlock:"10px",paddingBlock:"15px" ,backgroundColor: activesButton === 'others' ? "#00DEA3" : "white",color:activesButton === 'others' ? "#FFF":"#000",cursor:"pointer",borderRadius:"12px"}}>Others</li>
-            </ul>
+           
           </Box>
         </div>)
        }   
