@@ -39,7 +39,7 @@ const TotalTerminationYearandMonth = () => {
           style={{width:"100%"}}
           height={520}
           data={terminationData[selectedYear] ? Object.entries(terminationData[selectedYear]) : []}
-          margin={{ top: -20, right: 30, left: 40, bottom: 5 }}
+          margin={{ top: -10, right: 30, left: 40, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis type="number" />

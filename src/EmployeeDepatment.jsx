@@ -23,7 +23,7 @@ const EmployeeDepartment = () => {
 
     data.forEach(({ Departament, StaffCount }) => {
       if (Departament) { // Check if Departament is defined
-        const department = Departament.length > 20 ? Departament.slice(0, 20) + '...' : Departament;
+        const department = Departament.length > 55 ? Departament.slice(0, 20) + '...' : Departament;
         if (StaffCount <= 6) {
           departmentMap['Additional Departments'] = (departmentMap['Additional Departments'] || 0) + StaffCount;
         } else {
@@ -60,15 +60,15 @@ const EmployeeDepartment = () => {
     chartData.labels = labels;
     chartData.datasets[0].data = values;
   }
-
+  console.log(data.map(item=>item.Departament));
   return (
-    <div style={{ width: "100%", height: "550px", marginLeft: "0px", marginRight: "0px" }}>
+    <div style={{ width: "100%",  marginLeft: "0px", marginRight: "0px" }}>
 
       <Bar
         data={chartData}
         // width={550}
         style={{width:"100%"}}
-        height={200}
+        height={550}
         options={{
           indexAxis: 'y',
           maintainAspectRatio: false,
@@ -89,7 +89,12 @@ const EmployeeDepartment = () => {
         },
           tooltips: {
             callbacks: {
-              label: (tooltipItem) => `Staff Count: ${tooltipItem.yLabel}`,
+              label: (tooltipItem) => {
+                const dataset = tooltipItem.dataset;
+                const index = tooltipItem.dataIndex;
+                const value = dataset.data[index];
+                return `${tooltipItem.label}: ${value}`;
+              },
             },
           },
         }}

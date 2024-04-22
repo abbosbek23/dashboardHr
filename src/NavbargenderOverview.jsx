@@ -5,8 +5,8 @@ import { Typography } from '@mui/material';
 import axios from 'axios';
 // import firstIcon from "../src/assets/firsticon.png"
 // import dismissedicon from "../src/assets/dismissedicon.svg"
-// import averageicon from "../src/assets/averageageicon.svg"
-import totalemployeeicon from "../src/assets/totalemployeeicon.png"
+import averageicon from "../src/assets/averageageicon.svg"
+// import totalemployeeicon from "../src/assets/totalemployeeicon.png"
 import maleicon from "./assets/mangenderoverview.png"
 import femaleicon from "./assets/femalegenderoverview.png"
 import { useState, useEffect } from 'react';
@@ -65,10 +65,10 @@ const NavbargenderOverview = ({namepage}) => {
               <Box sx={{width:"100%", borderRadius: "20px", background: "#BAEDBD"}}>
                 <Box sx={{ display: "flex",paddingTop:"0px" }}>
                   <img
-                    src={totalemployeeicon}
-                    width={52}
+                    src={averageicon}
+                    width={54}
                     height={54}
-                    style={{marginRight:"10px",marginTop:"35px",padding:"10px",backgroundColor:"white",borderRadius:"50%"}}
+                    style={{marginRight:"10px",marginTop:"35px"}}
                     alt="icons"
                   />
                     <Box sx={{marginLeft:"10px",textAlign:"center"}}>

@@ -32,7 +32,7 @@ const TotalTerminationbyMonth = () => {
           style={{width:"100%"}}
           height={520}
           data={renderData()}
-          margin={{ top: -40, right: 30, left: 40, bottom: 5 }}
+          margin={{ top: -10, right: 30, left: 40, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis type="number" />
