@@ -98,8 +98,8 @@ const MalesPieChart = () => {
         fontWeight: 400,
         lineHeight: "normal",
         
-      }}>{label}-</Typography>
-      <Typography sx={{marginLeft:"1px"}}>{count} ({Math.round((count / Object.values(ageData).reduce((a, b) => a + b)) * 100)}%)</Typography>
+      }}>{label}</Typography>
+      <Typography sx={{marginLeft:"1px"}}>({Math.round((count / Object.values(ageData).reduce((a, b) => a + b)) * 100)}%)</Typography>
     </Box>
   </Box>
 ))}
