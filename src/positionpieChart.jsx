@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
 
-const BarchartHorizontal = () => {
+const   BarchartHorizontal = () => {
   const [positions, setPositions] = useState({});
   const [selectedGender, setSelectedGender] = useState('default');
 
@@ -59,7 +59,7 @@ const BarchartHorizontal = () => {
 const buttonStyle = {
   padding: '8px 16px',
   borderRadius: '5px',
-  border: '1px solid #B5B5B5',
+  border: '1px solid #000',
   marginRight: '10px',
   marginLeft:"5px",
   backgroundColor: '#fff',
