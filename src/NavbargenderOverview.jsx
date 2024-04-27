@@ -8,7 +8,7 @@ import axios from 'axios';
 import averageicon from "../src/assets/averageageicon.svg"
 // import totalemployeeicon from "../src/assets/totalemployeeicon.png"
 import maleicon from "./assets/mangenderoverview.png"
-import femaleicon from "./assets/femalegenderoverview.png"
+import femaleicon from "./assets/femalegenderoverview.pn"
 import { useState, useEffect } from 'react';
 
 const NavbargenderOverview = ({namepage}) => {
@@ -19,7 +19,7 @@ const NavbargenderOverview = ({namepage}) => {
     document.body.style.backgroundColor = '#EFF3FD';
    const getStaffnumber = async() => {
     try {
-        const {data} = await axios.get("https://dev.ikramovna.me/api/v1/ag")
+        const {data} = await axios.get("https://dev.ikramovna.me/api/v1/age")
         console.log(data);
         setStaffNumber(data)
     } catch (error) {
