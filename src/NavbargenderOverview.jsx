@@ -19,7 +19,7 @@ const NavbargenderOverview = ({namepage}) => {
     document.body.style.backgroundColor = '#EFF3FD';
    const getStaffnumber = async() => {
     try {
-        const {data} = await axios.get("https://dev.ikramovna.me/api/v1/age")
+        const {data} = await axios.get("https://dev.ikramovna.me/api/v1/ag")
         console.log(data);
         setStaffNumber(data)
     } catch (error) {
