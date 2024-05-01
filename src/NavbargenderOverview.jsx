@@ -8,7 +8,7 @@ import axios from 'axios';
 import averageicon from "../src/assets/averageageicon.svg"
 // import totalemployeeicon from "../src/assets/totalemployeeicon.png"
 import maleicon from "./assets/mangenderoverview.png"
-import femaleicon from "./assets/femalegenderoverview.pn"
+import femaleicon from "./assets/femalegenderoverview.png"
 import { useState, useEffect } from 'react';
 
 const NavbargenderOverview = ({namepage}) => {
